@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card-box {
+  background: linear-gradient(0deg, #186e7a, #186e7a), rgba(217, 217, 217, 0.1);
+  box-shadow: inset 9.36177px -9.36177px 9.36177px rgba(165, 165, 165, 0.1),
+    inset -9.36177px 9.36177px 9.36177px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(9.36177px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 0px 0px 11px 11px;
+}
+.glass {
+  /* From https://css.glass */
+  background: rgba(24, 110, 122, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card-orange {
+  background: #ce5729;
+  box-shadow: inset 9.23538px -9.23538px 9.23538px rgba(165, 165, 165, 0.1),
+    inset -9.23538px 9.23538px 9.23538px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(9.23538px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 10.6154px;
+}
+
+.fade-in-image {
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Définir les styles pour le texte */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Définir l'animation avec @keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* Appliquer l'animation lorsque l'élément apparaît à l'écran */
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0%);
+  animation: fade-in 1s ease;
 }
