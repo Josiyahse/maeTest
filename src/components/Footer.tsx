@@ -44,13 +44,13 @@ const Footer = () => {
       return (
         <div
           key={`${index}foo`}
-          className="flex flex-col h-[250px] w-[263px] text-neutral-50 text-2xl font-medium justify-start gap-10 "
+          className="flex flex-col h-[250px] w-[263px] text-neutral-50 text-2xl font-medium justify-start gap-5 xl:gap-10 "
         >
           <p className="text-neutral-50 text-[25px] w-[263px]  font-bold">
             {foot.title}
           </p>
           <div>
-            <ul className="flex flex-col gap-5">
+            <ul className="flex flex-col gap-3 xl:gap-5">
               {foot.list.map((li, index1) => {
                 return (
                   <li
@@ -70,14 +70,16 @@ const Footer = () => {
 
   return (
     <div className="flex flex-row flex-wrap min-h-[418px] bg-[#186E7A] justify-between items-center px-10 gap-10 p-5 ">
-      <img alt="logo" src={require("./../assets/footerImage.png")} />
+      <div className="w-full xl:w-fit">
+        <img alt="logo" src={require("./../assets/footerImage.png")} />
+      </div>
       <p className=" tracking-wide whitespace-normal max-h-[184px] max-w-[300px] text-neutral-50 text-[18px] font-thin">
         Vous avez du mal à organiser votre séminaire ou vous ne voulez pas
         perdre de temps avec l'organisation de celui-ci ? Meltrip, c'est
         l'agence événementielle qu'il vous faut !
       </p>
       {mapFooter()}
-      <div className="flex flex-col gap-[27px]">{mapBt()}</div>
+      <div className="flex xl:flex-col gap-[27px]">{mapBt()}</div>
     </div>
   );
 };

@@ -11,16 +11,16 @@ const WideCard = ({ data }: any) => {
   // flex flex-col justify-between w-[${screen.sw(485)}px] h-[${screen.sh(374)px] rounded-[12px]
   return (
     <div
-      className={`flex flex-col justify-between rounded-[12px] w-[485px] h-[374px] bg-no-repeat bg-center bg-cover `}
+      className={`flex flex-col justify-between rounded-[12px] w-[80vw] h-[40vh]  xl:w-[485px] xl:h-[374px] bg-no-repeat bg-center bg-cover `}
       style={styles}
     >
       <div></div>
       <div
-        className={` card-orange flex flex-col w-[485px] h-[112px] p-3 rounded-[12px]`}
+        className={` card-orange flex flex-col  w-[80vw] xl:w-[485px] xl:h-[112px] p-3 rounded-[12px]`}
       >
-        <p className="text-white text-[24px] w-[263px]  font-bold">{`${data.duration} jours : ${data.price} €`}</p>
+        <p className="text-white text-[4vw] xl:text-[24px] w-full font-bold">{`${data.duration} jours : ${data.price} €`}</p>
         <div className="flex flex-row justify-between">
-          <p className="grow  text-white text-[15px] w-[263px]  font-semiBold">
+          <p className="grow text-white text-[3.5vw] xl:text-[15px] w-[30vw] font-semiBold">
             {data.description}
           </p>
           <div className="flex justify-center items-center rounded-full bg-white h-[46px] w-[46px]">

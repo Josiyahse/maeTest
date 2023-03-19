@@ -35,19 +35,26 @@ const Meet = () => {
   };
 
   const modalImages = () => {
+    let save =
+      "flex flex-col justify-around bg-white fixed z-50 w-[90vw] xl:w-[70vw] h-[90vh] top-[5vh] left-[5vw] xl:left-[15vw] p-[1vw] gap-[2vw] border-[3px] border-solid border-[#448B7B] rounded-xl";
     return (
       <div
         key={`popUp${modal.position}`}
-        className="flex flex-col justify-between bg-red-500 fixed z-50 w-[90vw] h-[90vh] top-[5vh] left-[5vw] p-[1vw] gap-[5vw]"
+        className=" flex flex-col justify-between py-5 gap-5 bg-white fixed z-50 top-0 left-0 w-[100vw] h-[100vh] "
       >
-        <div className="flex justify-end">2</div>
+        <div className="flex justify-center">
+          <p className="font-bold">
+            {meet.activities[modal.position].habitation.name}
+          </p>
+        </div>
+        {/* <div className="flex justify-end">2</div> */}
         {meet.activities[modal.position].habitation !== undefined ? (
-          <div className="flex flex-wrap justify-center items-center gap-[3vw] overflow-auto">
+          <div className="flex flex-wrap justify-center xl:justify-start items-center gap-[3vw] overflow-auto xl:px-[9vw]">
             {meet.activities[modal.position].habitation.images?.map(
               (img: any, index: number) => {
                 return (
                   <img
-                    className=" w-[70vw] rounded-xl"
+                    className=" w-[70vw] rounded-xl xl:w-[25vw]"
                     key={`img${index}`}
                     alt="image habitation"
                     src={img}
@@ -60,7 +67,7 @@ const Meet = () => {
         <div className="flex justify-center">
           <button
             onClick={closModal}
-            className="font-bold bg-red-500 text-white"
+            className="font-bold bg-[#186E7A] py-2 px-10 rounded-lg text-white"
           >
             FERMER
           </button>
@@ -71,7 +78,7 @@ const Meet = () => {
 
   const mapActivities = () => {
     return (
-      <div className="flex flex-col w-full gap-5">
+      <div className="flex flex-col w-full gap-5 pt-20">
         {meet.activities?.map((activity: any, index: number) => {
           return activitiesView(activity, index);
         })}
@@ -89,33 +96,42 @@ const Meet = () => {
 
   const activitiesView = (act: any, index: number) => {
     return (
-      <div key={`act${index}`} className="flex w-full gap-10">
+      <div
+        key={`act${index}`}
+        className="flex flex-col w-full gap-2 xl:gap-10 xl:flex-row"
+      >
         <div
-          className=" w-[525px] h-[334px] bg-no-repeat bg-center bg-cover"
+          className=" w-[90vw] h-[30vh] bg-no-repeat bg-center bg-cover xl:w-[525px] xl:h-[334px]"
           style={{ backgroundImage: `url(${act.image})` }}
         ></div>
-        <div className="flex flex-col max-w-[50vw] justify-between p-5 gap-5 relative">
-          <p className="font-bold text-[30px]">{`Jour ${act.rank} : ${act.name}`}</p>
-          <p className="font-medium text-[16px] h-full">{act.description}</p>
+        <div className="flex flex-col w-full xl:max-w-[50vw] justify-between xl:p-5 gap-5 relative">
+          <p className="font-bold text-[6vw] md:text-[4vw] xl:text-[30px]">{`Jour ${act.rank} : ${act.name}`}</p>
+          <p className="font-medium  text-[4vw] md:text-[3vw] xl:text-[16px] h-full">
+            {act.description}
+          </p>
           {act.details ? (
             <div className="flex flex-wrap gap-x-1 divide-x-2  divide-black ">
               {returnDetails(act.details)}
             </div>
           ) : null}
-          <div className="flex justify-between">
+          <div className="flex flex-col justify-between gap-3 xl:flex-row">
             <div className="flex items-center gap-2">
-              <FiMapPin />
-              <p>{act.location}</p>
+              <FiMapPin className="text-[5vw] xl:text-[1.5vw]" />
+              <p className="text-[5vw] md:text-[3vw] xl:text-[1vw]">
+                {act.location}
+              </p>
             </div>
             <div className="flex">
               {act.habitation ? (
                 <div className="flex whitespace-nowrap gap-2">
-                  <p className="font-bold text-[16px]">Hébergement</p>
+                  <p className="font-bold text-[4vw] md:text-[3vw] xl:text-[1vw]">
+                    Hébergement
+                  </p>
                   <p
                     onClick={() => {
                       openModal(index);
                     }}
-                    className="font-medium text-[#186E7A] text-[16px]"
+                    className="font-medium whitespace-normal text-[4vw] md:text-[3vw] xl:text-[1vw] text-[#186E7A]"
                   >
                     {act.habitation.name}
                   </p>
@@ -132,24 +148,30 @@ const Meet = () => {
     return details.map((det: any) => {
       return (
         <div className="flex gap-1 whitespace-nowrap justify-center items-center px-2 ">
-          <p className="font-bold text-[16px]">{det.name}</p>:
-          <p className="font-medium text-[16px]">{det.description}</p>
+          <p className="font-bold text-[4vw] md:text-[3vw] xl:text-[16px]">
+            {det.name}
+          </p>
+          :
+          <p className="font-medium text-[4vw] md:text-[3vw] xl:text-[16px]">
+            {det.description}
+          </p>
         </div>
       );
     });
   };
 
   const tailWindStyle = {
-    p48: `text-[48px] font-extrabold  text-center relative w-full`,
-    p24: `text-[24px] font-light  text-center relative w-full`,
-    p24wb: `text-[24px] font-bold text-white text-left relative w-full`,
-    p36l: `text-[36px] font-bold  text-left relative w-full`,
-    p16l: `text-[16] font-medium text-left relative w-full whitespace-normal`,
-    p16lw: `text-[16] font-medium text-white text-left relative w-full whitespace-normal`,
+    p48: `text-[10vw] xl:text-[48px] font-extrabold  text-center relative w-full`,
+    p24: `text-[4vw] xl:text-[24px] font-light  text-center relative w-full`,
+    p24wb: `text-[5vw] xl:text-[24px] font-bold text-white text-left relative w-full`,
+    p36l: `text-[6vw] xl:text-[36px] font-bold  text-left relative w-full`,
+    p16l: `text-[4vw] xl:text-[16px] font-medium text-left relative w-full whitespace-normal`,
+    p16lw: `text-[4vw] xl:text-[16px] font-medium text-white text-left relative w-full whitespace-normal`,
     imageCover: `w-[90vw] h-[60vh] rounded-[12px] bg-no-repeat bg-center bg-cover`,
   };
+
   return (
-    <div className="flex flex-col h-full w-full justify-between gap-10  pt-[30vh] relative">
+    <div className="flex flex-col h-full w-full justify-between gap-10  pt-[10vh] relative">
       <Navbar />
       {modal.active ? modalImages() : null}
       {/* <div className=" h-20"></div> */}
@@ -162,7 +184,7 @@ const Meet = () => {
             backgroundImage: `url(${meet.coverImage})`,
           }}
         ></div>
-        <div className="flex flex-col w-[80vw] gap-10">
+        <div className="flex flex-col w-[90vw] gap-5 xl:gap-10">
           <p className={tailWindStyle.p36l}>{meet.title}</p>
           <p className={tailWindStyle.p16l}>{meet.description}</p>
           <p className={tailWindStyle.p36l}>Séminaire à personnaliser</p>
@@ -185,7 +207,7 @@ const Meet = () => {
           </div>
           {mapActivities()}
           <p className={tailWindStyle.p36l}>Details</p>
-          <div className="flex gap-20">
+          <div className="flex flex-col gap-20 xl:flex-row ">
             <div className="flex gap-10 items-center">
               <FaEuroSign className="text-[57px] text-[#CE5729]" />
               <div className="flex flex-col gap-5">
@@ -211,14 +233,14 @@ const Meet = () => {
             <button className="px-10 h-[66px] border-solid border-4 border-[#CE5729] rounded-[7px] font-semibold">
               Personnaliser votre séminaire
             </button>
-            <button className="px-20 h-[66px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
+            <button className="px-20 h-[80px] xl:h-[66px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
               Voir d’autres séminaires Meltrip Now
             </button>
           </div>
           <p className={tailWindStyle.p36l}>
             TOP 3 des séminaires les plus appréciés{" "}
           </p>
-          <div className="flex w-full flex-wrap justify-start px-5 gap-5 ">
+          <div className="flex w-full flex-wrap justify-center px-5 gap-5 ">
             {mapWideCard()}
           </div>
         </div>

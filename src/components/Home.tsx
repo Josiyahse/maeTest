@@ -140,13 +140,16 @@ const Home = () => {
   }, []);
 
   const mapFeed = () => {
-    let title = "font-bold text-[30px] ";
-    let desc = "font-medium text-[25px] text-[#757575] ";
+    let title = "font-bold text-[5vw] xl:text-[1.9vw] ";
+    let desc = "font-medium text-[4vw] text-[#757575] xl:text-[1.2vw] ";
     const left = (feed: any, index: number) => {
       return (
-        <div className="flex gap-10 justify-end " ref={fadeRef}>
+        <div
+          className="flex flex-col gap-[2vh] justify-end xl:flex-row"
+          ref={fadeRef}
+        >
           {imageFeed(feed.image, index)}
-          <div className="flex flex-col gap-5 w-[30vw] ">
+          <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
             <p className={title}>{feed.title.toUpperCase()}</p>
             <p className={desc}>{feed.description}</p>
           </div>
@@ -155,8 +158,11 @@ const Home = () => {
     };
     const right = (feed: any, index: number) => {
       return (
-        <div className="flex gap-10 justify-start " ref={fadeRef}>
-          <div className="flex flex-col gap-5 w-[30vw]">
+        <div
+          className="flex flex-col-reverse gap-[2vh] justify-start xl:flex-row"
+          ref={fadeRef}
+        >
+          <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
             <p className={title}>{feed.title.toUpperCase()}</p>
             <p className={desc}>{feed.description}</p>
           </div>
@@ -166,8 +172,8 @@ const Home = () => {
     };
     const end = (feed: any, index: number) => {
       return (
-        <div className="flex gap-10 justify-center pt-20 ">
-          <div className="flex flex-col gap-5 w-[35vw]">
+        <div className="flex flex-col-reverse gap-[2vh] justify-center xl:flex-row xl:pt-[10vh] ">
+          <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
             <p className={title}>{feed.title.toUpperCase()}</p>
             <p className={desc}>{feed.description}</p>
           </div>
@@ -198,23 +204,19 @@ const Home = () => {
       return (
         <div
           key={`des${index}`}
-          className="flex flex-col h-full w-[30vw] gap-10 justify-around"
+          className="flex flex-col h-full w-full gap-[3vh] justify-around"
         >
-          <div className="flex justify-center  h-[35vh] object-cover object-center ">
-            <img
-              alt={des.title}
-              // viewBox="0 0 430 299"
-              // xmlns="http://www.w3.org/2000/svg"
-              // dangerouslySetInnerHTML={{ __html: des.logo }}
-              src={des.logo}
-            />
+          <div className="flex justify-center md:scale-125 xl:scale-100 md:pb-10 xl:pb-0 object-cover object-center ">
+            <img className="" alt={des.title} src={des.logo} />
           </div>
-          <p className="font-bold h-[20vh] text-[30px]">
-            {des.bold.toUpperCase()}
-          </p>
-          <p className="font-medium text-[25px] text-[#757575]">
-            {des.regular}
-          </p>
+          <div className="flex flex-col ">
+            <p className=" flex items-start font-bold h-[16vh] text-[5vw] md:h-[20vh] xl:text-[1.5vw]">
+              {des.bold.toUpperCase()}
+            </p>
+            <p className="font-medium text-[5vw] text-[#757575] xl:text-[1.2vw]">
+              {des.regular}
+            </p>
+          </div>
         </div>
       );
     });
@@ -222,21 +224,36 @@ const Home = () => {
 
   const returnImage = (pos: number) => {
     return (
-      <div className="w-[17vw] relative">
+      <div className="w-full xl:w-[17vw] relative">
         <img alt={grids[pos].title} src={grids[pos].image} />
-        <div className="flex justify-between items-center px-5 w-[17vw] absolute bottom-5 left-0 h-auto">
-          <p className="font-bold text-white text-[1vw] ">
+        <div className="flex w-full justify-between items-center px-3 xl:w-[17vw] absolute bottom-5 left-0 h-auto">
+          <p className="font-bold w-full text-[3vw] text-white xl:text-[1vw] ">
             {grids[pos].title.toUpperCase()}
           </p>
-          <HiOutlineArrowCircleRight className="text-white text-[4vw]" />
+          <HiOutlineArrowCircleRight className="text-white text-[10vw] xl:text-[4vw]" />
         </div>
+      </div>
+    );
+  };
+
+  const inputLetter = () => {
+    return (
+      <div className="flex  w-full xl:w-[90vw] xl:full xl:flex justify-between items-center bg-white rounded-full  p-3 gap-10 ">
+        <input
+          type="text"
+          placeholder="Entrez votre adresse email"
+          className="text-[3vw] xl:text-[1vw]"
+        />
+        <button className="bg-[#CE5729] rounded-full p-2 text-white text-[3vw] xl:p-3 xl:px-6 xl:text-[1vw]">
+          S'abonner
+        </button>
       </div>
     );
   };
 
   return (
     <div className="flex flex-col w-full justify-between gap-[30vh] pt-[80vh] static">
-      <div className="inline-block xl:inline-block md:hidden sm:hidden ">
+      <div className="hidden xl:inline">
         <img
           alt="back1"
           className=" absolute left-[55vw] top-[135vh]"
@@ -254,63 +271,63 @@ const Home = () => {
         />
         <img
           alt="back4"
-          className=" absolute w-[15vw] left-[15vw] top-[320vh] rotate-90"
+          className=" absolute w-[15vw] left-[15vw] top-[295vh] rotate-90"
           src={require("../assets/back4.png")}
         />
         <img
           alt="backFigL"
-          className=" absolute  left-[0vw] top-[330vh] "
+          className=" absolute  left-[0vw] top-[300vh] "
           src={require("../assets/backFigL.png")}
         />
         <img
           alt="back2"
-          className=" absolute w-[15vw] left-[40vw] top-[360vh] rotate-12 "
+          className=" absolute w-[15vw] left-[41vw] top-[345vh] rotate-12"
           src={require("../assets/back4.png")}
         />
         <img
           alt="back2"
-          className=" absolute w-[15vw] right-[10vw] top-[425vh] rotate-[123deg]"
+          className=" absolute w-[15vw] right-[15vw] top-[410vh] rotate-[123deg]"
           src={require("../assets/back4.png")}
         />
         <img
           alt="back2"
-          className=" absolute left-[55vw] top-[500vh] "
+          className=" absolute left-[51vw] top-[480vh] "
           src={require("../assets/back7.png")}
         />
         <img
           alt="backFigR"
-          className=" absolute  right-[0vw] top-[460vh]  "
+          className=" absolute right-[0vw] top-[440vh]  "
           src={require("../assets/backFigR.png")}
         />
 
         <img
           alt="back2"
-          className=" absolute w-[15vw] left-[40vw] top-[495vh] rotate-[9deg]"
+          className=" absolute w-[15vw] left-[40vw] top-[480vh] rotate-[9deg]"
           src={require("../assets/back4.png")}
         />
         <img
           alt="back2"
-          className=" absolute  left-[10vw] top-[565vh] rotate-[]"
+          className=" absolute  left-[6vw] top-[550vh] "
           src={require("../assets/back7.png")}
         />
         <img
           alt="backFigL"
-          className=" absolute  left-[0vw] top-[570vh] "
+          className=" absolute  left-[0vw] top-[550vh] z-10"
           src={require("../assets/backFigL.png")}
         />
         <img
           alt="back2"
-          className=" absolute  left-[23vw] top-[563vh] rotate-[115deg]"
+          className=" absolute  left-[20vw] top-[550vh] rotate-[115deg]"
           src={require("../assets/back4.png")}
         />
         <img
           alt="back2"
-          className=" absolute  left-[49vw] top-[635vh]  -rotate-[4deg]"
+          className=" absolute  left-[48vw] top-[620vh]  -rotate-[4deg]"
           src={require("../assets/back4.png")}
         />
         <img
           alt="scoop"
-          className=" absolute  left-[48vw] top-[735vh] "
+          className=" absolute  left-[48vw] top-[730vh] "
           src={require("../assets/scoop.png")}
         />
         <img
@@ -322,21 +339,21 @@ const Home = () => {
       <Navbar />
       {/* Image div */}
       <div
-        className="flex flex-col justify-end h-[100vh] w-full absolute top-0 left-0 bg-no-repeat bg-center bg-cover gap-28 pb-5"
+        className="flex flex-col justify-end h-[100vh] w-full absolute top-0 left-0 bg-no-repeat bg-center bg-cover gap-[9vh] pb-5 xl:gap-[10vh] "
         style={{
           backgroundImage: `url(${require("../assets/HomeBackground.png")})`,
         }}
       >
         <div className="flex flex-col justify-center gap-3">
-          <p className="text-center text-[71px] font-bold text-white">
+          <p className="text-center text-[7vw] font-bold text-white xl:text-[5vw] ">
             {"votre séminaire sur mesure".toUpperCase()}
           </p>
-          <p className="text-center text-[32px] font-semibold text-white">
+          <p className="text-center text-[4vw] font-semibold text-white xl:text-[2vw]">
             Soyez vous, jusqu’au bout !
           </p>
         </div>
         <div className="flex flex-col items-center gap-5">
-          <button className="text-center text-[36px] font-bold bg-[#CE5729] px-10 py-5 text-white">
+          <button className="text-center text-[4vw] font-bold bg-[#CE5729] px-10 py-5 text-white xl:text-[1vw]">
             CRÉONS VOTRE SÉMINAIRE
           </button>
           <a title="down" href="#discover">
@@ -345,42 +362,47 @@ const Home = () => {
         </div>
       </div>
       {/* Image div */}
-      <div className="flex flex-col items-center  w-full  bg-no-repeat bg-center bg-cover gap-40  pb-5">
+      <div className="flex flex-col items-center  w-full  bg-no-repeat bg-center bg-cover gap-[11vh]  pb-5">
         <img
           className="w-[13vw]"
           alt="logo meltrip"
           src={require("../assets/meltripvdefdefdef-2.png")}
         />
-        <p id="discover" className="font-bold text-[40px] text-[#CE5729]">
-          Un séminaire avec Meltrip c’est...
+        <p
+          id="discover"
+          className="font-bold text-[5vw] text-[#CE5729] pt-[6vh] xl:text-[2vw]"
+        >
+          Un séminaire avec Meltrip c'est...
         </p>
-        <div className="xl:flex flex-row gap-20  justify-around w-[90vw] relative ">
+        <div className="flex flex-col gap-[10vh] justify-around w-[90vw] relative xl:flex xl:flex-row  ">
           {mapDes()}
         </div>
-        <p className="font-bold text-[40px] text-[#CE5729]">
+        <p className="font-bold text-[5vw] text-[#CE5729] pt-[6vh] xl:text-[2vw]">
           Comment ça marche ?
         </p>
-        <div className="flex flex-col gap-32 pt-[15vh] px-10">{mapFeed()}</div>
+        <div className="flex flex-col gap-[15vh] pt-[15vh] px-[5vw]">
+          {mapFeed()}
+        </div>
         {/* <div className="columns-4 ">{mapGrid()}</div> */}
-        <div className="flex flex-col gap-20 h-[135vh] relative pt-[45vh]">
-          <div className="flex gap-20 items-start">
+        <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[135vh] xl:pt-[45vh] ">
+          <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap[10vw] xl:gap-20">
             {returnImage(0)}
-            <div className="flex flex-col justify-start gap-20 w-[38vw] ">
-              <p className="font-bold text-[40px] text-[#CE5729] text-center">
+            <div className="flex flex-col justify-start gap-[5vw] w-full xl:w-[38vw] ">
+              <p className="font-bold text-[5vw] text-[#CE5729] xl:text-center xl:text-[40px]">
                 Vous voulez un séminaire prêt- à l’emploi ?
               </p>
-              <p className="font-medium text-[25px] text-[#757575] ">
+              <p className="font-medium text-[3vw] text-[#757575] xl:text-[25px] ">
                 Conscient de notre impact, nous voulons aussi vous aider en vous
                 informant des émissions GES que vous avez réalisées pendant ce
                 séminaire.
               </p>
-              <p className="underline underline-offset-1 text-medium text-[20px] text-[#448B7B] ">
+              <p className="underline underline-offset-1 text-medium text-[3vw] text-[#448B7B] xl:text-[20px]  ">
                 Voir plus de séminaire Meltrip Now
               </p>
             </div>
-            {returnImage(1)}
+            <div className="hidden xl:block">{returnImage(1)}</div>
           </div>
-          <div className="flex gap-20 items-center absolute pt-[50vh] ">
+          <div className="hidden xl:flex gap-20 items-center absolute pt-[50vh] ">
             {returnImage(2)}
             <div className="flex flex-col gap-20">
               {returnImage(3)}
@@ -390,70 +412,67 @@ const Home = () => {
             {returnImage(5)}
           </div>
         </div>
-        <div className="flex flex-col w-full items-center pt-[30vh] gap-32">
-          <p className="font-bold text-[40px] text-[#CE5729]">NOS GARANTIES</p>
-          <div className="flex w-full justify-around px-10 ">
-            <div className="flex flex-col items-center gap-10">
+        <div className="flex flex-col w-full gap-10 items-center xl:pt-[40vh] xl:gap-32">
+          <p className="font-bold text-[5vw] text-[#CE5729] xl:text-[2vw]">
+            NOS GARANTIES
+          </p>
+          <div className="flex flex-col w-full justify-around gap-5 px-[1vw] xl:px-10 xl:flex-row">
+            <div className="flex px-[3vw] flex-col items-center gap-5 ">
               <img
-                className="w-[5vw]"
+                className=" w-[15vw] xl:w-[5vw]"
                 alt="star"
                 src={require("../assets/star.png")}
               />
-              <p className="font-regular text-[20px] w-[20vw] text-center">
+              <p className="font-regular text-[4vw] w-[70vw] xl:text-[20px] xl:w-[20vw] text-center">
                 Des séminaires sur mésure
               </p>
             </div>
-            <div className="flex flex-col items-center gap-10">
+            <div className="flex px-[3vw] flex-col justify-between gap-5 items-center ">
               <img
-                className="w-[5vw]"
+                className="w-[15vw]  xl:w-[5vw]"
                 alt="step"
                 src={require("../assets/step.png")}
               />
-              <p className="font-regular text-[20px] w-[20vw] text-center">
-                Calcul de votre empreinte carbone et sélection d’un de nos
+              <p className="font-regular text-[4vw] w-[70vw]  xl:text-[20px] xl:w-[20vw] text-center">
+                Calcul de votre empreinte carbone et sélection d'un de nos
                 partenaires pour vous aider à les compenser
               </p>
             </div>
-            <div className="flex flex-col items-center gap-10 text-center">
+            <div className="flex flex-col px-[3vw] items-center gap-5 text-center">
               <img
-                className="w-[15vw]"
+                className="w-[30vw] xl:w-[15vw]"
                 alt="card"
                 src={require("../assets/card.png")}
               />
-              <p className="font-regular text-[20px] w-[20vw]">
+              <p className="font-regular text-[4vw] w-[70vw]  xl:text-[20px] xl:w-[20vw] text-center">
                 Paiement sécurisé
               </p>
             </div>
           </div>
         </div>
-
-        <p className="font-bold text-[50px] text-[#CE5729]">
+        <p className="font-bold text-[5vw] text-center px-5 text-[#CE5729] xl:pt-[6vh] xl:text-[2vw] ">
           {"Envie d’en savoir plus et d’être au courant des nouveautés ?".toUpperCase()}
         </p>
-        <div className="flex h-[20vh] w-full px-[20vw] relative">
+        <div className="flex justify-center  w-full  xl:px-[20vw]  relative">
           <img
-            className="w-[7vw] absolute top-[14vh] left-[18vw]"
+            className="hidden xl:block w-[7vw] absolute top-[14vh] left-[18vw]"
             alt="rectangle"
             src={require("../assets/newsLetterRectangle.png")}
           />
-          <div className=" flex flex-col justify-center items-start bg-[#CE5729] h-[25vh] w-[55vw] p-10 rounded-[60px] z-10 gap-4">
-            <p className="font-bold text-white text-[30px] w-[25vw] ">
+          <div className=" flex flex-col justify-center items-start w-[90vw] bg-[#CE5729]  h-[30vh] xl:h-[25vh] xl:w-[55vw] p-5 md:p-10 xl:p-10 rounded-[30px] md:rounded-[40px] xl:rounded-[60px] z-10 gap-4">
+            <p className="font-bold text-[4vw] text-white xl:text-[30px] xl:w-[25vw]">
               Abonnez-vous à notre Newsletter
             </p>
-            <p className="font-medium text-white text-[20px]  w-[25vw]">
+            <p className="font-medium text-[3vw]  text-white xl:text-[20px]  xl:w-[25vw]">
               En m’abonnant, j’accepte de recevoir cette newsletter et je
               comprends que je peux me désabonner facilement à tout moment.
             </p>
+            <div className="block w-full xl:hidden">{inputLetter()} </div>
           </div>
-          <div className="flex bg-[#186E7A] h-[25vh]  absolute w-[20vw] right-[25vw]  justify-center items-center rounded-full pr-20 z-30">
-            <div className="flex justify-between items-center bg-white rounded-full  p-3 gap-20 ">
-              <input type="text" placeholder="Entrez votre adresse email " />
-              <button className="bg-[#CE5729] rounded-full p-3 px-6 text-white ">
-                S'abonner
-              </button>
-            </div>
+          <div className="hidden xl:flex bg-[#186E7A] h-[25vh]  absolute w-[20vw] right-[25vw]  justify-center items-center rounded-full pr-20 z-30">
+            {inputLetter()}
           </div>
-          <div className=" bg-[#186E7A] h-[25vh]  absolute w-[10vw] right-[22vw]  rounded-r-[60px] z-20"></div>
+          <div className="hidden xl:block bg-[#186E7A] h-[25vh]  absolute w-[10vw] right-[22vw]  rounded-r-[60px] z-20"></div>
         </div>
       </div>
       <Footer />

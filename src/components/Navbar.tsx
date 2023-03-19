@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useScreen from "./Screen";
+import { HiMenu } from "react-icons/hi";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [active, setActive] = useState("ACCUEIL");
   const [isload, setIsLoad] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
+  const [dropped, setDropped] = useState(false);
 
   if (location.state !== null && !isload) {
     setActive(location.state);
@@ -30,6 +32,22 @@ const Navbar = () => {
 
   const logZone = () => {
     if (screen.width < 1280) {
+      return (
+        <button title="menu" className="flex justify-end ">
+          <p
+            className={
+              "active".toUpperCase() === active
+                ? colorActive()
+                : colorNotActive()
+            }
+            onClick={() => {
+              setDropped(!dropped);
+            }}
+          >
+            <HiMenu className="text-[7vw] text-left" />
+          </p>
+        </button>
+      );
     } else {
       return logList.map((entry: any) => {
         return (
@@ -51,47 +69,69 @@ const Navbar = () => {
 
   const colorNotActive = () => {
     if (active === "ACCUEIL") {
-      return "font-semibold relative text-white";
+      return "flex font-bold text-[5vw] text-[#FFFFFF] md:text-[4vw] xl:text-[1vw]";
     } else {
-      return "font-semibold relative ";
+      return "flex font-bold text-[5vw] text-[#000000] md:text-[4vw] xl:text-[1vw]";
     }
   };
+
   const colorActive = () => {
     if (active === "ACCUEIL") {
-      return "font-semibold relative text-white";
+      return "flex font-bold text-[5vw] text-[#FFFFFF] md:text-[4vw] xl:text-[1vw]";
     } else {
-      return "font-semibold relative text-[#186E7A]";
+      return "flex font-bold text-[5vw] text-[#186E7A] md:text-[4vw] xl:text-[1vw]";
     }
   };
 
   const renderListOne = () => {
-    if (screen.width < 640) {
+    if (screen.width < 1280) {
+      return list.map((text: any, index) => {
+        return (
+          <button
+            key={`${index}list`}
+            className={
+              text.name.toUpperCase() === active
+                ? colorActive()
+                : colorNotActive()
+            }
+            onClick={() => {
+              setActive(text.name.toUpperCase());
+              navigate(text.link, { state: text.name.toUpperCase() });
+            }}
+          >
+            {text.name.toUpperCase()}
+          </button>
+        );
+      });
+    } else {
+      return list.map((text: any, index) => {
+        return (
+          <button
+            key={`${index}list`}
+            className={
+              text.name.toUpperCase() === active
+                ? colorActive()
+                : colorNotActive()
+            }
+            onClick={() => {
+              setActive(text.name.toUpperCase());
+              navigate(text.link, { state: text.name.toUpperCase() });
+            }}
+          >
+            {text.name.toUpperCase()}
+          </button>
+        );
+      });
     }
-    return list.map((text: any, index) => {
-      return (
-        <button
-          key={`${index}list`}
-          className={
-            text.name.toUpperCase() === active
-              ? colorActive()
-              : colorNotActive()
-          }
-          onClick={() => {
-            setActive(text.name.toUpperCase());
-            navigate(text.link, { state: text.name.toUpperCase() });
-          }}
-        >
-          {text.name.toUpperCase()}
-        </button>
-      );
-    });
   };
 
   let glass =
-    "glass flex flex-row flex-wrap gap-5 left-0 top-0 p-5 w-full bg-white justify-between items-center z-[10] absolute";
+    "glass flex flex-row flex-wrap gap-5 left-0 top-0 p-5 xl:px-10 w-full bg-white justify-between items-center z-[10] absolute";
   let noGlass =
-    "flex flex-row flex-wrap gap-5 left-0 top-0 p-5 w-full bg-white justify-between items-center z-[10] absolute";
+    "flex flex-row flex-wrap gap-5 left-0 top-0 p-5 xl:px-10 w-full bg-white justify-between items-center z-[10] absolute";
 
+  let divideBlack = "shrink divide-black divide-x-2  flex flex-cols-3";
+  let divideWite = "shrink divide-white divide-x-2  flex flex-cols-3";
   return (
     <div className={active === "ACCUEIL" ? glass : noGlass}>
       <button
@@ -101,7 +141,7 @@ const Navbar = () => {
         }}
       >
         <img
-          className="shrink  w-20 "
+          className="shrink  w-20 md:w-28 xl:w-32 "
           src={require(active != "ACCUEIL"
             ? "../assets/metripLogo.png"
             : "../assets/meltripLogoBlanc.png")}
@@ -109,10 +149,17 @@ const Navbar = () => {
         />
       </button>
 
-      <div className="shrink  flex flex-row gap-10 ">{renderListOne()}</div>
-      <div className="shrink  flex flex-cols-3 divide-neutral-900 divide-x-2 ">
+      <div className="shrink hidden  gap-10 xl:flex xl:flex-row  ">
+        {renderListOne()}
+      </div>
+      <div className={active === "ACCUEIL" ? divideWite : divideBlack}>
         {logZone()}
       </div>
+      {dropped ? (
+        <div className="flex flex-col justify-start pt-10 gap-[5vh] w-full items-start h-[90vh] ">
+          {renderListOne()}
+        </div>
+      ) : null}
     </div>
   );
 };
