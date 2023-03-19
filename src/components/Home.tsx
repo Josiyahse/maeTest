@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AiOutlineRight } from "react-icons/ai";
@@ -6,6 +7,7 @@ import { HiOutlineArrowCircleRight } from "react-icons/hi";
 
 const Home = () => {
   const fadeRef = useRef<any>(null);
+  const navigate = useNavigate();
 
   let logoDes = [
     {
@@ -332,7 +334,7 @@ const Home = () => {
         />
         <img
           alt="back5"
-          className=" absolute left-[40vw] top-[755vh] "
+          className=" absolute left-[40vw] top-[750vh] "
           src={require("../assets/back5.png")}
         />
       </div>
@@ -387,7 +389,7 @@ const Home = () => {
         <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[135vh] xl:pt-[45vh] ">
           <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap[10vw] xl:gap-20">
             {returnImage(0)}
-            <div className="flex flex-col justify-start gap-[5vw] w-full xl:w-[38vw] ">
+            <div className="flex flex-col justify-start gap-[2vw] w-full xl:w-[38vw] ">
               <p className="font-bold text-[5vw] text-[#CE5729] xl:text-center xl:text-[40px]">
                 Vous voulez un séminaire prêt- à l’emploi ?
               </p>
@@ -396,9 +398,14 @@ const Home = () => {
                 informant des émissions GES que vous avez réalisées pendant ce
                 séminaire.
               </p>
-              <p className="underline underline-offset-1 text-medium text-[3vw] text-[#448B7B] xl:text-[20px]  ">
-                Voir plus de séminaire Meltrip Now
-              </p>
+              <a
+                onClick={() => {
+                  navigate("/meetings");
+                }}
+                className="flex underline underline-offset-1 text-left text-medium text-[3vw] text-[#448B7B] xl:text-[20px]  "
+              >
+                Voir plus de Meltrip Now
+              </a>
             </div>
             <div className="hidden xl:block">{returnImage(1)}</div>
           </div>

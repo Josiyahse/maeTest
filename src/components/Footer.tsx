@@ -69,7 +69,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="flex flex-row flex-wrap min-h-[418px] bg-[#186E7A] justify-between items-center px-10 gap-10 p-5 ">
+    <div className="flex flex-row flex-wrap min-h-[418px] bg-[#186E7A] justify-around items-center px-10 gap-10 p-16 ">
       <div className="w-full xl:w-fit">
         <img alt="logo" src={require("./../assets/footerImage.png")} />
       </div>
@@ -79,7 +79,7 @@ const Footer = () => {
         l'agence événementielle qu'il vous faut !
       </p>
       {mapFooter()}
-      <div className="flex xl:flex-col gap-[27px]">{mapBt()}</div>
+      <div className="flex xl:flex-col gap-[27px] ">{mapBt()}</div>
     </div>
   );
 };

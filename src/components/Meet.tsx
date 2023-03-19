@@ -210,14 +210,14 @@ const Meet = () => {
           <div className="flex flex-col gap-20 xl:flex-row ">
             <div className="flex gap-10 items-center">
               <FaEuroSign className="text-[57px] text-[#CE5729]" />
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col">
                 <p className="font-medium text-[24px]">Budget moyen:</p>
                 <p className="font-bold text-[24px]">{`${meet.estimatePrice} € estimé par adulte`}</p>
               </div>
             </div>
             <div className="flex gap-10 items-center">
               <FaCalendarAlt className="text-[57px] text-[#CE5729]" />
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col">
                 <p className="font-medium text-[24px]">Nombre de jours:</p>
                 <p className="font-bold text-[24px]">{`${meet.duration} jours`}</p>
               </div>
@@ -226,14 +226,14 @@ const Meet = () => {
           <p className={tailWindStyle.p36l}>
             Ce circuit ne correspond pas exactement à vos attentes ?
           </p>
-          <div className="flex  flex-wrap gap-5">
-            <button className="px-20 h-[66px] text-white bg-[#CE5729] rounded-[7px] font-semibold">
+          <div className="flex  flex-wrap justify-center gap-5">
+            <button className="px-20 py-5 w-full md:w-[43.3vw]  text-white bg-[#CE5729] rounded-[7px] font-semibold">
               Régler ce séminaire
             </button>
-            <button className="px-10 h-[66px] border-solid border-4 border-[#CE5729] rounded-[7px] font-semibold">
+            <button className="px-10 py-5 w-full md:w-[43.3vw] border-solid border-4 border-[#CE5729] rounded-[7px] font-semibold">
               Personnaliser votre séminaire
             </button>
-            <button className="px-20 h-[80px] xl:h-[66px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
+            <button className="px-5 py-5  w-full xl:w-fit xl:h-[66px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
               Voir d’autres séminaires Meltrip Now
             </button>
           </div>
