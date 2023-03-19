@@ -471,7 +471,7 @@ const Meetings = () => {
     if (screen.width < 1280) {
       return (
         <div className="w-full">
-          <div className="flex justify-between ">
+          <div className="flex justify-between pb-5 ">
             <p className="font-bold text-[3vh] xl:text-[24px]">Filtre</p>
             <button
               title="drop"
