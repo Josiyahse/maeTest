@@ -18,16 +18,16 @@ const Navbar = () => {
   }
 
   const list = [
-    { name: "notre agence", link: "/meetings" },
+    { name: "notre agence", link: "/" },
     { name: "séminaire prêt a l'emploie", link: "/meetings" },
-    { name: "blog", link: "/meetings" },
-    { name: "contact", link: "/meetings" },
+    { name: "blog", link: "/" },
+    { name: "contact", link: "/" },
   ];
 
   const logList = [
-    { name: "s'inscrire", type: "LINK", link: "" },
-    { name: "se connecter", type: "LINK", link: "" },
-    { name: "EN", type: "LANG", link: "" },
+    { name: "s'inscrire", type: "LINK", link: "/" },
+    { name: "se connecter", type: "LINK", link: "/" },
+    { name: "EN", type: "LANG", link: "/" },
   ];
 
   const logZone = () => {
@@ -65,6 +65,27 @@ const Navbar = () => {
         );
       });
     }
+  };
+
+  const logSmallScreen = () => {
+    return logList.map((text: any, index) => {
+      return (
+        <button
+          key={`${index}list`}
+          className={
+            text.name.toUpperCase() === active
+              ? colorActive()
+              : colorNotActive()
+          }
+          onClick={() => {
+            setActive(text.name.toUpperCase());
+            navigate(text.link, { state: text.name.toUpperCase() });
+          }}
+        >
+          {text.name.toUpperCase()}
+        </button>
+      );
+    });
   };
 
   const colorNotActive = () => {
