@@ -3,7 +3,11 @@ module.exports = {
   mode: "jit",
   content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "3xl": "2560px",
+      },
+    },
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
     },

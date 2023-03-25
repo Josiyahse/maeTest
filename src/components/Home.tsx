@@ -8,6 +8,9 @@ import { HiOutlineArrowCircleRight } from "react-icons/hi";
 const Home = () => {
   const fadeRef = useRef<any>(null);
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   let logoDes = [
     {
@@ -127,7 +130,11 @@ const Home = () => {
   const imageFeed = (image: any, index: number) => {
     return (
       <div className=" bg-no-repeat bg-center bg-cover relative">
-        <img alt="image" src={image} />
+        <img
+          className="w-[100vw] md:w-[70vw] xl:w-[30vw]"
+          alt="image"
+          src={image}
+        />
         <div className="absolute flex justify-center items-center rounded-full bg-[#448B7B] h-[50px] w-[50px]  top-[-20px] left-7 ">
           <p className="font-bold text-white text-[30px]">{index + 1}</p>
         </div>
@@ -174,12 +181,21 @@ const Home = () => {
     };
     const end = (feed: any, index: number) => {
       return (
-        <div className="flex flex-col-reverse gap-[2vh] justify-center xl:flex-row xl:pt-[10vh] ">
-          <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
-            <p className={title}>{feed.title.toUpperCase()}</p>
-            <p className={desc}>{feed.description}</p>
+        <div className=" relative">
+          <div className="flex flex-col-reverse gap-[2vh] justify-center xl:flex-row xl:pt-[10vh] ">
+            <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
+              <p className={title}>{feed.title.toUpperCase()}</p>
+              <p className={desc}>{feed.description}</p>
+            </div>
+            {imageFeed(feed.image, index)}
           </div>
-          {imageFeed(feed.image, index)}
+          <div className="flex justify-center">
+            <img
+              alt="scoop"
+              className="w-[30vw]  pt-[5vh] xl:w-[10vw] "
+              src={require("../assets/scoop.png")}
+            />
+          </div>
         </div>
       );
     };
@@ -226,9 +242,9 @@ const Home = () => {
 
   const returnImage = (pos: number) => {
     return (
-      <div className="w-full xl:w-[17vw] relative">
-        <img alt={grids[pos].title} src={grids[pos].image} />
-        <div className="flex w-full justify-between items-center px-3 xl:w-[17vw] absolute bottom-5 left-0 h-auto">
+      <div className="w-full xl:w-[350px] relative">
+        <img className="w-full" alt={grids[pos].title} src={grids[pos].image} />
+        <div className="flex w-full justify-between items-center px-3 xl:w-[350px] absolute bottom-5 left-0 h-auto">
           <p className="font-bold w-full text-[3vw] text-white xl:text-[1vw] ">
             {grids[pos].title.toUpperCase()}
           </p>
@@ -256,87 +272,88 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full justify-between gap-[30vh] pt-[80vh] static">
       <div className="hidden xl:inline">
-        <img
+        {/* <img
           alt="back1"
           className=" absolute left-[55vw] top-[135vh]"
           src={require("../assets/back1.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back2"
           className=" absolute left-[30vw] top-[195vh]"
           src={require("../assets/back2.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back3"
           className=" absolute left-[0vw] top-[170vh]"
           src={require("../assets/back3.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back4"
           className=" absolute w-[15vw] left-[15vw] top-[295vh] rotate-90"
           src={require("../assets/back4.png")}
-        />
+        /> */}
         <img
           alt="backFigL"
-          className=" absolute  left-[0vw] top-[300vh] "
+          className=" absolute w-[20vw] left-[0vw] top-[300vh] "
           src={require("../assets/backFigL.png")}
         />
-        <img
+        {/* <img
           alt="back2"
           className=" absolute w-[15vw] left-[41vw] top-[345vh] rotate-12"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back2"
           className=" absolute w-[15vw] right-[15vw] top-[410vh] rotate-[123deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back2"
           className=" absolute left-[51vw] top-[480vh] "
           src={require("../assets/back7.png")}
-        />
+        /> */}
         <img
           alt="backFigR"
-          className=" absolute right-[0vw] top-[440vh]  "
+          className=" absolute w-[15vw] right-[0vw] top-[440vh]  "
           src={require("../assets/backFigR.png")}
         />
 
-        <img
+        {/* <img
           alt="back2"
           className=" absolute w-[15vw] left-[40vw] top-[480vh] rotate-[9deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+
+        {/* <img
           alt="back2"
           className=" absolute  left-[6vw] top-[550vh] "
           src={require("../assets/back7.png")}
-        />
+        /> */}
         <img
           alt="backFigL"
-          className=" absolute  left-[0vw] top-[550vh] z-10"
+          className=" absolute w-[20vw]  left-[0vw] top-[550vh] z-10"
           src={require("../assets/backFigL.png")}
         />
-        <img
+        {/* <img
           alt="back2"
           className=" absolute  left-[20vw] top-[550vh] rotate-[115deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back2"
           className=" absolute  left-[48vw] top-[620vh]  -rotate-[4deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="scoop"
-          className=" absolute  left-[48vw] top-[730vh] "
+          className=" absolute left-[48vw] top-[730vh] "
           src={require("../assets/scoop.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back5"
           className=" absolute left-[40vw] top-[750vh] "
           src={require("../assets/back5.png")}
-        />
+        /> */}
       </div>
       <Navbar />
       {/* Image div */}
@@ -386,30 +403,30 @@ const Home = () => {
           {mapFeed()}
         </div>
         {/* <div className="columns-4 ">{mapGrid()}</div> */}
-        <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[135vh] xl:pt-[45vh] ">
-          <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap[10vw] xl:gap-20">
+        <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[1300px]  ">
+          <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap-[129px]">
             {returnImage(0)}
-            <div className="flex flex-col justify-start gap-[2vw] w-full xl:w-[38vw] ">
-              <p className="font-bold text-[5vw] text-[#CE5729] xl:text-center xl:text-[40px]">
+            <div className="flex flex-col justify-start gap-[80px] w-full xl:w-[700px] ">
+              <p className="font-bold text-[5vw] text-[#CE5729] xl:text-left xl:text-[50px]">
                 Vous voulez un séminaire prêt- à l’emploi ?
               </p>
-              <p className="font-medium text-[3vw] text-[#757575] xl:text-[25px] ">
+              <p className="font-medium text-[3vw] text-[#757575] xl:text-[28px] ">
                 Conscient de notre impact, nous voulons aussi vous aider en vous
                 informant des émissions GES que vous avez réalisées pendant ce
                 séminaire.
               </p>
-              <a
+              <button
                 onClick={() => {
                   navigate("/meetings");
                 }}
-                className="flex underline underline-offset-1 text-left text-medium text-[3vw] text-[#448B7B] xl:text-[20px]  "
+                className="flex underline underline-offset-1 text-left text-medium text-[3vw] text-[#448B7B] xl:text-[24px] xl:z-10  "
               >
                 Voir plus de Meltrip Now
-              </a>
+              </button>
             </div>
             <div className="hidden xl:block">{returnImage(1)}</div>
           </div>
-          <div className="hidden xl:flex gap-20 items-center absolute pt-[50vh] ">
+          <div className="hidden xl:flex gap-20 items-center absolute xl:pt-[500px] 3xl:[0vh]">
             {returnImage(2)}
             <div className="flex flex-col gap-20">
               {returnImage(3)}
@@ -419,7 +436,7 @@ const Home = () => {
             {returnImage(5)}
           </div>
         </div>
-        <div className="flex flex-col w-full gap-10 items-center xl:pt-[40vh] xl:gap-32">
+        <div className="flex flex-col w-full gap-10 items-center  xl:gap-32">
           <p className="font-bold text-[5vw] text-[#CE5729] xl:text-[2vw]">
             NOS GARANTIES
           </p>
@@ -430,7 +447,7 @@ const Home = () => {
                 alt="star"
                 src={require("../assets/star.png")}
               />
-              <p className="font-regular text-[4vw] w-[70vw] xl:text-[20px] xl:w-[20vw] text-center">
+              <p className="font-regular text-[4vw] w-[70vw] xl:text-[24px] xl:w-[20vw] text-center">
                 Des séminaires sur mésure
               </p>
             </div>
@@ -440,7 +457,7 @@ const Home = () => {
                 alt="step"
                 src={require("../assets/step.png")}
               />
-              <p className="font-regular text-[4vw] w-[70vw]  xl:text-[20px] xl:w-[20vw] text-center">
+              <p className="font-regular text-[4vw] w-[70vw]  xl:text-[24px] xl:w-[20vw] text-center">
                 Calcul de votre empreinte carbone et sélection d'un de nos
                 partenaires pour vous aider à les compenser
               </p>
@@ -451,7 +468,7 @@ const Home = () => {
                 alt="card"
                 src={require("../assets/card.png")}
               />
-              <p className="font-regular text-[4vw] w-[70vw]  xl:text-[20px] xl:w-[20vw] text-center">
+              <p className="font-regular text-[4vw] w-[70vw]  xl:text-[24px] xl:w-[20vw] text-center">
                 Paiement sécurisé
               </p>
             </div>
@@ -461,25 +478,25 @@ const Home = () => {
           {"Envie d’en savoir plus et d’être au courant des nouveautés ?".toUpperCase()}
         </p>
         <div className="flex justify-center  w-full  xl:px-[20vw]  relative">
-          <img
+          {/* <img
             className="hidden xl:block w-[7vw] absolute top-[14vh] left-[18vw]"
             alt="rectangle"
             src={require("../assets/newsLetterRectangle.png")}
-          />
-          <div className=" flex flex-col justify-center items-start w-[90vw] bg-[#CE5729]  h-[30vh] xl:h-[25vh] xl:w-[55vw] p-5 md:p-10 xl:p-10 rounded-[30px] md:rounded-[40px] xl:rounded-[60px] z-10 gap-4">
-            <p className="font-bold text-[4vw] text-white xl:text-[30px] xl:w-[25vw]">
+          /> */}
+          <div className=" flex flex-col justify-center items-start w-[90vw] bg-[#CE5729]  h-[30vh] xl:h-fit xl:w-[55vw] p-5 md:p-10 xl:p-10 rounded-[30px] md:rounded-[40px] xl:rounded-[60px] z-10 gap-4">
+            <p className="font-bold text-[4vw] text-white xl:text-[1.7vw] xl:w-[25vw]">
               Abonnez-vous à notre Newsletter
             </p>
-            <p className="font-medium text-[3vw]  text-white xl:text-[20px]  xl:w-[25vw]">
+            <p className="font-medium text-[3vw]  text-white xl:text-[1.3vw]  xl:w-[25vw]">
               En m’abonnant, j’accepte de recevoir cette newsletter et je
               comprends que je peux me désabonner facilement à tout moment.
             </p>
             <div className="block w-full xl:hidden">{inputLetter()} </div>
           </div>
-          <div className="hidden xl:flex bg-[#186E7A] h-[25vh]  absolute w-[20vw] right-[25vw]  justify-center items-center rounded-full pr-20 z-30">
+          <div className="hidden xl:flex bg-[#186E7A] h-[25vh]  absolute w-[20vw] right-[25vw]  justify-center items-center rounded-full pr-20 z-30 xl:h-full">
             {inputLetter()}
           </div>
-          <div className="hidden xl:block bg-[#186E7A] h-[25vh]  absolute w-[10vw] right-[22vw]  rounded-r-[60px] z-20"></div>
+          <div className="hidden xl:block bg-[#186E7A] h-[25vh]  absolute w-[10vw] right-[22vw]  rounded-r-[60px] z-20 xl:h-full"></div>
         </div>
       </div>
       <Footer />
