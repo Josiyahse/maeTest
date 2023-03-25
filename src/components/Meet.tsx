@@ -22,6 +22,10 @@ const Meet = () => {
     }
   }, [modal]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const closModal = () => {
     setModal((pre: any) => {
       return { ...pre, ...{ active: false } };
@@ -101,12 +105,12 @@ const Meet = () => {
         className="flex flex-col w-full gap-2 xl:gap-10 xl:flex-row"
       >
         <div
-          className=" w-[90vw] h-[30vh] bg-no-repeat bg-center bg-cover xl:w-[525px] xl:h-[334px]"
+          className=" w-[90vw] h-[30vh] bg-no-repeat bg-center bg-cover xl:w-[525px] xl:h-[334px] 3xl:w-[725px] 3xl:h-[534px] "
           style={{ backgroundImage: `url(${act.image})` }}
         ></div>
         <div className="flex flex-col w-full xl:max-w-[50vw] justify-between xl:p-5 gap-5 relative">
-          <p className="font-bold text-[6vw] md:text-[4vw] xl:text-[30px]">{`Jour ${act.rank} : ${act.name}`}</p>
-          <p className="font-medium  text-[4vw] md:text-[3vw] xl:text-[16px] h-full">
+          <p className="font-bold text-[6vw] md:text-[4vw] xl:text-[30px] 3xl:text-[44px]">{`Jour ${act.rank} : ${act.name}`}</p>
+          <p className="font-medium  text-[4vw] md:text-[3vw] xl:text-[16px] 3xl:text-[26px] h-full">
             {act.description}
           </p>
           {act.details ? (
@@ -147,12 +151,12 @@ const Meet = () => {
   const returnDetails = (details: Array<any>) => {
     return details.map((det: any) => {
       return (
-        <div className="flex gap-1 whitespace-nowrap justify-center items-center px-2 ">
-          <p className="font-bold text-[4vw] md:text-[3vw] xl:text-[16px]">
+        <div className="flex gap-1 whitespace-nowrap justify-center items-center px-2 xl:text-[16px] 3xl:text-[26px] ">
+          <p className="font-bold text-[4vw] md:text-[3vw] xl:text-[16px] 3xl:text-[26px]">
             {det.name}
           </p>
           :
-          <p className="font-medium text-[4vw] md:text-[3vw] xl:text-[16px]">
+          <p className="font-medium text-[4vw] md:text-[3vw] xl:text-[16px] 3xl:text-[26px]">
             {det.description}
           </p>
         </div>
@@ -161,12 +165,12 @@ const Meet = () => {
   };
 
   const tailWindStyle = {
-    p48: `text-[10vw] xl:text-[48px] font-extrabold  text-center relative w-full`,
-    p24: `text-[4vw] xl:text-[24px] font-light  text-center relative w-full`,
-    p24wb: `text-[5vw] xl:text-[24px] font-bold text-white text-left relative w-full`,
-    p36l: `text-[6vw] xl:text-[36px] font-bold  text-left relative w-full`,
-    p16l: `text-[4vw] xl:text-[16px] font-medium text-left relative w-full whitespace-normal`,
-    p16lw: `text-[4vw] xl:text-[16px] font-medium text-white text-left relative w-full whitespace-normal`,
+    p48: `text-[10vw] xl:text-[48px] 3xl:text-[78px] font-extrabold  text-center relative w-full`,
+    p24: `text-[4vw] xl:text-[24px] 3xl:text-[44px] font-light  text-center relative w-full`,
+    p24wb: `text-[5vw] xl:text-[24px] 3xl:text-[44px] font-bold text-white text-left relative w-full`,
+    p36l: `text-[6vw] xl:text-[36px] 3xl:text-[56px] font-bold  text-left relative w-full`,
+    p16l: `text-[4vw] xl:text-[16px] 3xl:text-[36px] font-medium text-left relative w-full whitespace-normal`,
+    p16lw: `text-[4vw] xl:text-[16px] 3xl:text-[36px] w-full font-medium text-white text-left relative w-full whitespace-normal`,
     imageCover: `w-[90vw] h-[60vh] rounded-[12px] bg-no-repeat bg-center bg-cover`,
   };
 
@@ -189,8 +193,12 @@ const Meet = () => {
           <p className={tailWindStyle.p16l}>{meet.description}</p>
           <p className={tailWindStyle.p36l}>Séminaire à personnaliser</p>
           <div className="flex w-full flex-wrap p-10 bg-[#186E7A] gap-5 justify-between items-center">
-            <img alt="logo searching" src={require("../assets/amico.png")} />
-            <div className="flex flex-col max-w-[685px] gap-5">
+            <img
+              className="w-fit 3xl:w-[350px]"
+              alt="logo searching"
+              src={require("../assets/amico.png")}
+            />
+            <div className="flex flex-col max-w-[685px] gap-5 3xl:gap-1">
               <p className={tailWindStyle.p24wb}>
                 Un séminaire selon vos envies
               </p>
@@ -201,7 +209,7 @@ const Meet = () => {
                 avec l’agence Meltrip
               </p>
             </div>
-            <button className="w-[351px] h-[66px] text-white bg-[#CE5729] rounded-[7px] font-semibold">
+            <button className=" px-[50px] py-[20px] text-white 3xl:text-[36px] 3xl:w-fit bg-[#CE5729] rounded-[7px] font-semibold">
               Personnaliser mon séminaire
             </button>
           </div>
@@ -209,17 +217,21 @@ const Meet = () => {
           <p className={tailWindStyle.p36l}>Details</p>
           <div className="flex flex-col gap-20 xl:flex-row ">
             <div className="flex gap-10 items-center">
-              <FaEuroSign className="text-[57px] text-[#CE5729]" />
+              <FaEuroSign className="text-[57px] 3xl:text-[100px] text-[#CE5729]" />
               <div className="flex flex-col">
-                <p className="font-medium text-[24px]">Budget moyen:</p>
-                <p className="font-bold text-[24px]">{`${meet.estimatePrice} € estimé par adulte`}</p>
+                <p className="font-medium text-[24px] 3xl:text-[50px]">
+                  Budget moyen:
+                </p>
+                <p className="font-bold text-[24px] 3xl:text-[50px]">{`${meet.estimatePrice} € estimé par adulte`}</p>
               </div>
             </div>
             <div className="flex gap-10 items-center">
-              <FaCalendarAlt className="text-[57px] text-[#CE5729]" />
+              <FaCalendarAlt className="text-[57px] 3xl:text-[100px] text-[#CE5729]" />
               <div className="flex flex-col">
-                <p className="font-medium text-[24px]">Nombre de jours:</p>
-                <p className="font-bold text-[24px]">{`${meet.duration} jours`}</p>
+                <p className="font-medium text-[24px] 3xl:text-[50px]">
+                  Nombre de jours:
+                </p>
+                <p className="font-bold text-[24px] 3xl:text-[50px]">{`${meet.duration} jours`}</p>
               </div>
             </div>
           </div>
@@ -227,13 +239,13 @@ const Meet = () => {
             Ce circuit ne correspond pas exactement à vos attentes ?
           </p>
           <div className="flex  flex-wrap justify-center gap-5">
-            <button className="px-20 py-5 w-full md:w-[43.3vw]  text-white bg-[#CE5729] rounded-[7px] font-semibold">
+            <button className="px-20 py-5 w-full md:w-[43.3vw] xl:w-fit xl:px-[150px] xl:py-[25px] 3xl:text-[30px] text-white bg-[#CE5729] rounded-[7px] font-semibold">
               Régler ce séminaire
             </button>
-            <button className="px-10 py-5 w-full md:w-[43.3vw] border-solid border-4 border-[#CE5729] rounded-[7px] font-semibold">
+            <button className="px-10 py-5 w-full md:w-[43.3vw] xl:w-fit xl:px-[150px] xl:py-[25px] 3xl:text-[30px] border-solid border-4 border-[#CE5729] rounded-[7px] font-semibold">
               Personnaliser votre séminaire
             </button>
-            <button className="px-5 py-5  w-full xl:w-fit xl:h-[66px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
+            <button className="px-5 py-5  w-full xl:w-fit xl:px-[150px] xl:py-[25px] 3xl:text-[30px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
               Voir d’autres séminaires Meltrip Now
             </button>
           </div>
