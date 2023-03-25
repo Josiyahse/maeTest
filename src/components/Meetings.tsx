@@ -70,6 +70,9 @@ const Meetings = () => {
     filterTheMeetings();
   }, [filterMeet]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // useEffect(() => {
   //   let lengthTable = filteredMeetings.length;
   //   if (lengthTable > carrouselSetting.numberRender) {
@@ -553,8 +556,8 @@ const Meetings = () => {
           <div className="flex flex-row w-full h-fit xl:w-[30vw]">
             {filter()}
           </div>
-          <div className="flex flex-col flex-wrap w-full xl:h-[110vh] gap-10 justify-center  xl:px-[5vw] xl:pl-48">
-            <div className="flex w-full h-fit flex-wrap justify-center xl:justify-start gap-10 ">
+          <div className="flex flex-col flex-wrap w-full xl:h-[110vh] gap-10 justify-start  xl:px-[5vw] xl:pl-48">
+            <div className="flex w-full h-fit flex-wrap justify-center xl:justify-between gap-10 ">
               {mapMeets()}
             </div>
             <div className="flex justify-center">
