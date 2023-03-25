@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AiOutlineRight } from "react-icons/ai";
 import { HiOutlineArrowCircleRight } from "react-icons/hi";
-import useScreen from "./Screen";
 
 const Home = () => {
   const fadeRef = useRef<any>(null);
@@ -182,12 +181,21 @@ const Home = () => {
     };
     const end = (feed: any, index: number) => {
       return (
-        <div className="flex flex-col-reverse gap-[2vh] justify-center xl:flex-row xl:pt-[10vh] ">
-          <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
-            <p className={title}>{feed.title.toUpperCase()}</p>
-            <p className={desc}>{feed.description}</p>
+        <div className=" relative">
+          <div className="flex flex-col-reverse gap-[2vh] justify-center xl:flex-row xl:pt-[10vh] ">
+            <div className="flex flex-col gap-5 w-full xl:w-[30vw]">
+              <p className={title}>{feed.title.toUpperCase()}</p>
+              <p className={desc}>{feed.description}</p>
+            </div>
+            {imageFeed(feed.image, index)}
           </div>
-          {imageFeed(feed.image, index)}
+          <div className="flex justify-center">
+            <img
+              alt="scoop"
+              className="w-[30vw]  pt-[5vh] xl:w-[10vw] "
+              src={require("../assets/scoop.png")}
+            />
+          </div>
         </div>
       );
     };
@@ -266,17 +274,17 @@ const Home = () => {
       <div className="hidden xl:inline">
         {/* <img
           alt="back1"
-          className=" absolute w-[43vw] left-[55vw] top-[135vh] "
+          className=" absolute left-[55vw] top-[135vh]"
           src={require("../assets/back1.png")}
         /> */}
         {/* <img
           alt="back2"
-          className=" absolute w-[46vw] left-[30vw] top-[195vh]"
+          className=" absolute left-[30vw] top-[195vh]"
           src={require("../assets/back2.png")}
         /> */}
         {/* <img
           alt="back3"
-          className=" absolute w-[13vw]  left-[0vw] top-[170vh]"
+          className=" absolute left-[0vw] top-[170vh]"
           src={require("../assets/back3.png")}
         /> */}
         {/* <img
@@ -291,58 +299,59 @@ const Home = () => {
         />
         {/* <img
           alt="back2"
-          className=" absolute w-[16vw] left-[41vw] top-[352vh] rotate-12"
+          className=" absolute w-[15vw] left-[41vw] top-[345vh] rotate-12"
           src={require("../assets/back4.png")}
         /> */}
         {/* <img
           alt="back2"
-          className=" absolute w-[16vw] right-[15vw] top-[410vh] rotate-[123deg]"
+          className=" absolute w-[15vw] right-[15vw] top-[410vh] rotate-[123deg]"
           src={require("../assets/back4.png")}
         /> */}
         {/* <img
           alt="back2"
-          className=" absolute w-[40vw]  left-[51vw] top-[480vh] "
+          className=" absolute left-[51vw] top-[480vh] "
           src={require("../assets/back7.png")}
         /> */}
         <img
           alt="backFigR"
-          className=" absolute right-[0vw] top-[440vh]  "
+          className=" absolute w-[15vw] right-[0vw] top-[440vh]  "
           src={require("../assets/backFigR.png")}
         />
 
         {/* <img
           alt="back2"
-          className=" absolute w-[16vw] left-[40vw] top-[487vh] rotate-[20deg]"
+          className=" absolute w-[15vw] left-[40vw] top-[480vh] rotate-[9deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+
+        {/* <img
           alt="back2"
-          className=" absolute w-[40vw]  left-[6vw] top-[550vh] "
+          className=" absolute  left-[6vw] top-[550vh] "
           src={require("../assets/back7.png")}
         /> */}
         <img
           alt="backFigL"
-          className=" absolute  left-[0vw] top-[550vh] z-10"
+          className=" absolute w-[20vw]  left-[0vw] top-[550vh] z-10"
           src={require("../assets/backFigL.png")}
         />
         {/* <img
           alt="back2"
-          className=" absolute w-[16vw]  left-[20vw] top-[548vh] rotate-[115deg]"
+          className=" absolute  left-[20vw] top-[550vh] rotate-[115deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="back2"
-          className=" absolute w-[16vw]  left-[48vw] top-[620vh]  -rotate-[4deg]"
+          className=" absolute  left-[48vw] top-[620vh]  -rotate-[4deg]"
           src={require("../assets/back4.png")}
-        />
-        <img
+        /> */}
+        {/* <img
           alt="scoop"
-          className=" absolute  left-[48vw] top-[730vh] "
+          className=" absolute left-[48vw] top-[730vh] "
           src={require("../assets/scoop.png")}
         /> */}
         {/* <img
           alt="back5"
-          className=" absolute  left-[40vw] top-[725vh] "
+          className=" absolute left-[40vw] top-[750vh] "
           src={require("../assets/back5.png")}
         /> */}
       </div>
@@ -394,8 +403,8 @@ const Home = () => {
           {mapFeed()}
         </div>
         {/* <div className="columns-4 ">{mapGrid()}</div> */}
-        <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[135vh] xl:pt-[45vh] ">
-          <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap[10vw] xl:gap-20">
+        <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[1300px]  ">
+          <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap-[129px]">
             {returnImage(0)}
             <div className="flex flex-col justify-start gap-[80px] w-full xl:w-[700px] ">
               <p className="font-bold text-[5vw] text-[#CE5729] xl:text-left xl:text-[50px]">
@@ -469,16 +478,16 @@ const Home = () => {
           {"Envie d’en savoir plus et d’être au courant des nouveautés ?".toUpperCase()}
         </p>
         <div className="flex justify-center  w-full  xl:px-[20vw]  relative">
-          <img
+          {/* <img
             className="hidden xl:block w-[7vw] absolute top-[14vh] left-[18vw]"
             alt="rectangle"
             src={require("../assets/newsLetterRectangle.png")}
-          />
-          <div className=" flex flex-col justify-center items-start w-[90vw] bg-[#CE5729]  h-[30vh] xl:h-[25vh] xl:w-[55vw] p-5 md:p-10 xl:p-10 rounded-[30px] md:rounded-[40px] xl:rounded-[60px] z-10 gap-4">
-            <p className="font-bold text-[4vw] text-white xl:text-[30px] xl:w-[25vw]">
+          /> */}
+          <div className=" flex flex-col justify-center items-start w-[90vw] bg-[#CE5729]  h-[30vh] xl:h-fit xl:w-[55vw] p-5 md:p-10 xl:p-10 rounded-[30px] md:rounded-[40px] xl:rounded-[60px] z-10 gap-4">
+            <p className="font-bold text-[4vw] text-white xl:text-[1.7vw] xl:w-[25vw]">
               Abonnez-vous à notre Newsletter
             </p>
-            <p className="font-medium text-[3vw]  text-white xl:text-[20px]  xl:w-[25vw]">
+            <p className="font-medium text-[3vw]  text-white xl:text-[1.3vw]  xl:w-[25vw]">
               En m’abonnant, j’accepte de recevoir cette newsletter et je
               comprends que je peux me désabonner facilement à tout moment.
             </p>
