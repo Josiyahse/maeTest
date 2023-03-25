@@ -8,9 +8,9 @@ import { HiOutlineArrowCircleRight } from "react-icons/hi";
 const Home = () => {
   const fadeRef = useRef<any>(null);
   const navigate = useNavigate();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   let logoDes = [
     {
@@ -242,9 +242,9 @@ const Home = () => {
 
   const returnImage = (pos: number) => {
     return (
-      <div className="w-full xl:w-[350px] relative">
+      <div className="w-full xl:w-[300px] relative">
         <img className="w-full" alt={grids[pos].title} src={grids[pos].image} />
-        <div className="flex w-full justify-between items-center px-3 xl:w-[350px] absolute bottom-5 left-0 h-auto">
+        <div className="flex w-full justify-between items-center px-3 xl:w-[300px] absolute bottom-5 left-0 h-auto">
           <p className="font-bold w-full text-[3vw] text-white xl:text-[1vw] ">
             {grids[pos].title.toUpperCase()}
           </p>
@@ -403,14 +403,14 @@ const Home = () => {
           {mapFeed()}
         </div>
         {/* <div className="columns-4 ">{mapGrid()}</div> */}
-        <div className="flex  items-center gap-20 w-full relative xl:flex-col xl:h-[1300px]  ">
-          <div className="flex items-start px-[5vw] gap-[5vw]  xl:flex-row xl:gap-[129px]">
+        <div className="flex  items-center gap-10 w-full relative xl:flex-col xl:h-[1300px]  ">
+          <div className="flex items-start px-[5vw] gap-[5vw] xl:flex-row xl:gap-10">
             {returnImage(0)}
-            <div className="flex flex-col justify-start gap-[80px] w-full xl:w-[700px] ">
-              <p className="font-bold text-[5vw] text-[#CE5729] xl:text-left xl:text-[50px]">
+            <div className="flex flex-col justify-start gap-[50px] w-full xl:w-[700px] ">
+              <p className="font-bold text-[5vw] text-[#CE5729] xl:text-left xl:text-[40px]">
                 Vous voulez un séminaire prêt- à l’emploi ?
               </p>
-              <p className="font-medium text-[3vw] text-[#757575] xl:text-[28px] ">
+              <p className="font-medium text-[3vw] text-[#757575] xl:text-[20px] ">
                 Conscient de notre impact, nous voulons aussi vous aider en vous
                 informant des émissions GES que vous avez réalisées pendant ce
                 séminaire.
@@ -419,16 +419,16 @@ const Home = () => {
                 onClick={() => {
                   navigate("/meetings");
                 }}
-                className="flex underline underline-offset-1 text-left text-medium text-[3vw] text-[#448B7B] xl:text-[24px] xl:z-10  "
+                className="flex underline underline-offset-1 text-left text-medium text-[3vw] text-[#448B7B] xl:text-[19px] xl:z-10  "
               >
                 Voir plus de Meltrip Now
               </button>
             </div>
             <div className="hidden xl:block">{returnImage(1)}</div>
           </div>
-          <div className="hidden xl:flex gap-20 items-center absolute xl:pt-[500px] 3xl:[0vh]">
+          <div className="hidden xl:flex gap-10 items-center absolute xl:pt-[400px] 3xl:[0vh]">
             {returnImage(2)}
-            <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-10">
               {returnImage(3)}
               {returnImage(6)}
             </div>
