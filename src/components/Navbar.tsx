@@ -18,10 +18,10 @@ const Navbar = () => {
   }
 
   const list = [
-    { name: "notre agence", link: "/" },
+    { name: "notre agence" },
     { name: "séminaire prêt a l'emploie", link: "/meetings" },
-    { name: "blog", link: "/" },
-    { name: "contact", link: "/" },
+    { name: "blog" },
+    { name: "contact" },
   ];
 
   const logList = [
@@ -104,6 +104,13 @@ const Navbar = () => {
     }
   };
 
+  const navigationFunction = (text: any) => {
+    if (text.link !== undefined) {
+      setActive(text.name.toUpperCase());
+      navigate(text.link, { state: text.name.toUpperCase() });
+    }
+  };
+
   const renderListOne = () => {
     if (screen.width < 1280) {
       return list.map((text: any, index) => {
@@ -116,8 +123,7 @@ const Navbar = () => {
                 : colorNotActive()
             }
             onClick={() => {
-              setActive(text.name.toUpperCase());
-              navigate(text.link, { state: text.name.toUpperCase() });
+              navigationFunction(text);
             }}
           >
             {text.name.toUpperCase()}
@@ -135,8 +141,7 @@ const Navbar = () => {
                 : colorNotActive()
             }
             onClick={() => {
-              setActive(text.name.toUpperCase());
-              navigate(text.link, { state: text.name.toUpperCase() });
+              navigationFunction(text);
             }}
           >
             {text.name.toUpperCase()}

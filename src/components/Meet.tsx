@@ -47,7 +47,7 @@ const Meet = () => {
         className=" flex flex-col justify-between py-5 gap-5 bg-white fixed z-50 top-0 left-0 w-[100vw] h-[100vh] "
       >
         <div className="flex justify-center">
-          <p className="font-bold">
+          <p className="font-bold xl:text-[24px] 3xl:text-[34px]">
             {meet.activities[modal.position].habitation.name}
           </p>
         </div>
@@ -71,7 +71,7 @@ const Meet = () => {
         <div className="flex justify-center">
           <button
             onClick={closModal}
-            className="font-bold bg-[#186E7A] py-2 px-10 rounded-lg text-white"
+            className="font-bold bg-[#186E7A] py-2 px-10 rounded-lg text-white xl:text-[24px] 3xl:text-[34px] "
           >
             FERMER
           </button>
@@ -131,14 +131,14 @@ const Meet = () => {
                   <p className="font-bold text-[4vw] md:text-[3vw] xl:text-[1vw]">
                     Hébergement
                   </p>
-                  <p
+                  <button
                     onClick={() => {
                       openModal(index);
                     }}
                     className="font-medium whitespace-normal text-[4vw] md:text-[3vw] xl:text-[1vw] text-[#186E7A]"
                   >
                     {act.habitation.name}
-                  </p>
+                  </button>
                 </div>
               ) : null}
             </div>
