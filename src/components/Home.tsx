@@ -7,10 +7,11 @@ import { HiOutlineArrowCircleRight } from "react-icons/hi";
 
 const Home = () => {
   const fadeRef = useRef<any>(null);
+
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   let logoDes = [
     {
