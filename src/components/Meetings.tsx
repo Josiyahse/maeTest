@@ -556,11 +556,11 @@ const Meetings = () => {
           <div className="flex flex-row w-full h-fit xl:w-[30vw]">
             {filter()}
           </div>
-          <div className="flex flex-col flex-wrap w-full xl:h-[110vh] gap-10 justify-start  xl:px-[5vw] xl:pl-48">
+          <div className="flex flex-col flex-nowrap w-full xl:h-[110vh] gap-10 justify-start  xl:px-[5vw] xl:pl-48">
             <div className="flex w-full h-fit flex-wrap justify-center xl:justify-between gap-10 ">
               {mapMeets()}
             </div>
-            <div className="flex justify-center">
+            <div className="flex w-full justify-center">
               <button
                 onClick={seeMore}
                 className="p-5 font-semibold text-[#186E7A] rounded-md bg-white border-[3px] border-solid border-[#186E7A]"
