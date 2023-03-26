@@ -404,7 +404,7 @@ const Home = () => {
           {mapFeed()}
         </div>
         {/* <div className="columns-4 ">{mapGrid()}</div> */}
-        <div className="flex  items-center gap-10 w-full relative xl:flex-col xl:h-[1300px]  ">
+        <div className="flex  items-center gap-10 w-full relative xl:flex-col xl:h-[900px]  ">
           <div className="flex items-start px-5 xl:px-0 gap-[5vw] xl:flex-row xl:justify-between xl:gap-5">
             {returnImage(0)}
             <div className="flex flex-col justify-start gap-[50px] w-full xl:w-[600px] ">
