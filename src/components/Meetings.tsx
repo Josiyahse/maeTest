@@ -553,21 +553,23 @@ const Meetings = () => {
       <Navbar />
       <div className="flex flex-col justify-between px-5 gap-20">
         <div className="flex flex-col w-full justify-between h-fit  items-start gap-10 xl:flex-row">
-          <div className="flex flex-row w-full h-fit xl:w-[700px]">
+          <div className="flex flex-row w-full h-fit  xl:w-[500px]">
             {filter()}
           </div>
-          <div className="flex flex-col flex-nowrap w-full xl:h-fit xl:w-fit gap-10 justify-center items-center">
-            <div className="flex w-full h-fit flex-wrap justify-center xl:w-fit xl:justify-start xl:gap-10 xl:px-10">
+          <div className="flex flex-col flex-nowrap w-full xl:h-fit xl:w-[70vw] gap-10 justify-center items-center">
+            <div className="flex w-full h-fit flex-wrap justify-center xl:pl-[8vw] xl:w-fit xl:justify-start gap-5 xl:gap-10 xl:px-10">
               {mapMeets()}
             </div>
             <div className="flex w-full justify-center">
-              <button
-                onClick={seeMore}
-                className="p-5 font-semibold text-[#186E7A] rounded-md bg-white border-[3px] border-solid border-[#186E7A]"
-                // onClick={seeMore}
-              >
-                VOIR PLUS
-              </button>
+              {filteredMeetings?.length > 0 ? (
+                <button
+                  onClick={seeMore}
+                  className="p-5 font-semibold text-[#186E7A] rounded-md bg-white border-[3px] border-solid border-[#186E7A]"
+                  // onClick={seeMore}
+                >
+                  VOIR PLUS
+                </button>
+              ) : null}
             </div>
           </div>
         </div>
@@ -575,7 +577,7 @@ const Meetings = () => {
         <p className="text-[7vw] xl:text-[48px] font-extrabold  text-center relative">
           TOP 3 DES SÉMINAIRES LES PLUS APPRÉCIÉS
         </p>
-        <div className="flex w-full flex-wrap justify-evenly px-5 gap-5 ">
+        <div className="flex w-full flex-wrap justify-center px-5 gap-5">
           {mapWideCard()}
         </div>
       </div>
