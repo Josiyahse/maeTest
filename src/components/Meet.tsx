@@ -238,19 +238,19 @@ const Meet = () => {
           <p className={tailWindStyle.p36l}>
             Ce circuit ne correspond pas exactement à vos attentes ?
           </p>
-          <div className="flex  flex-wrap justify-center gap-5">
+          <div className="flex  flex-wrap justify-start gap-5">
             <button className="px-20 py-5 w-full md:w-[43.3vw] xl:w-fit xl:px-[150px] xl:py-[25px] 3xl:text-[30px] text-white bg-[#CE5729] rounded-[7px] font-semibold">
               Régler ce séminaire
             </button>
             <button className="px-10 py-5 w-full md:w-[43.3vw] xl:w-fit xl:px-[150px] xl:py-[25px] 3xl:text-[30px] border-solid border-4 border-[#CE5729] rounded-[7px] font-semibold">
               Personnaliser votre séminaire
             </button>
-            <button className="px-5 py-5  w-full xl:w-fit xl:px-[150px] xl:py-[25px] 3xl:text-[30px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
+            <button className="px-5 py-5  w-full xl:w-fit xl:px-[80px] xl:py-[25px] 3xl:text-[30px] border-solid border-4 border-[#448B7B] text-[#448B7B] rounded-[7px] font-semibold">
               Voir d’autres séminaires Meltrip Now
             </button>
           </div>
           <p className={tailWindStyle.p36l}>
-            TOP 3 des séminaires les plus appréciés{" "}
+            TOP 3 des séminaires les plus appréciés
           </p>
           <div className="flex w-full flex-wrap justify-center px-5 gap-5 ">
             {mapWideCard()}
