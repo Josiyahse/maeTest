@@ -1,11 +1,15 @@
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import useScreen from "../Screen";
+import { useNavigate } from "react-router-dom";
+import { meets } from "../../data";
 
 const WideCard = ({ data }: any) => {
   const styles = {
     backgroundImage: `url(${data.imageLink})`,
   };
+
+  const navigate = useNavigate();
 
   const screen = useScreen();
   // flex flex-col justify-between w-[${screen.sw(485)}px] h-[${screen.sh(374)px] rounded-[12px]
@@ -24,7 +28,13 @@ const WideCard = ({ data }: any) => {
             {data.description}
           </p>
           <div className="flex justify-center items-center rounded-full bg-white h-[46px] w-[46px] 2xl:h-[40px] 2xl:w-[60px]  xl:h-[60px] xl:w-[60px] 3xl:h-[70px] 3xl:w-[70px]">
-            <AiOutlineArrowRight className="text-black text-2xl" />
+            <button
+              onClick={() => {
+                navigate("/meet", { state: meets[0] });
+              }}
+            >
+              <AiOutlineArrowRight className="text-black text-2xl" />
+            </button>
           </div>
         </div>
       </div>

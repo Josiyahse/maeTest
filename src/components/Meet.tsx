@@ -173,7 +173,7 @@ const Meet = () => {
   };
 
   return (
-    <div className="flex flex-col h-full w-full justify-between gap-10  pt-[10vh] relative">
+    <div className="flex flex-col h-full w-full justify-between gap-10  pt-[20vh] relative">
       <Navbar />
       {modal.active ? modalImages() : null}
       {/* <div className=" h-20"></div> */}
