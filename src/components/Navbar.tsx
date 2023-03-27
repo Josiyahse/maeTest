@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const list = [
     { name: "notre agence" },
-    { name: "séminaire prêt a l'emploie", link: "/meetings" },
+    { name: "séminaire prêt a l'emploi", link: "/meetings" },
     { name: "blog" },
     { name: "contact" },
   ];
