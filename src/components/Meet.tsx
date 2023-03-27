@@ -39,8 +39,6 @@ const Meet = () => {
   };
 
   const modalImages = () => {
-    let save =
-      "flex flex-col justify-around bg-white fixed z-50 w-[90vw] xl:w-[70vw] h-[90vh] top-[5vh] left-[5vw] xl:left-[15vw] p-[1vw] gap-[2vw] border-[3px] border-solid border-[#448B7B] rounded-xl";
     return (
       <div
         key={`popUp${modal.position}`}
@@ -53,7 +51,7 @@ const Meet = () => {
         </div>
         {/* <div className="flex justify-end">2</div> */}
         {meet.activities[modal.position].habitation !== undefined ? (
-          <div className="flex flex-wrap justify-center xl:justify-start items-center gap-[3vw] overflow-auto xl:px-[9vw]">
+          <div className="flex flex-wrap justify-center xl:justify-start items-start gap-[3vw] overflow-auto xl:px-[9vw]">
             {meet.activities[modal.position].habitation.images?.map(
               (img: any, index: number) => {
                 return (
@@ -170,12 +168,12 @@ const Meet = () => {
     p24wb: `text-[5vw] xl:text-[24px] 3xl:text-[44px] font-bold text-white text-left relative w-full`,
     p36l: `text-[6vw] xl:text-[36px] 3xl:text-[56px] font-bold  text-left relative w-full`,
     p16l: `text-[4vw] xl:text-[16px] 3xl:text-[36px] font-medium text-left relative w-full whitespace-normal`,
-    p16lw: `text-[4vw] xl:text-[16px] 3xl:text-[36px] w-full font-medium text-white text-left relative w-full whitespace-normal`,
+    p16lw: `text-[4vw] xl:text-[16px] 3xl:text-[36px] w-full font-medium text-white text-left relative  whitespace-normal`,
     imageCover: `w-[90vw] h-[60vh] rounded-[12px] bg-no-repeat bg-center bg-cover`,
   };
 
   return (
-    <div className="flex flex-col h-full w-full justify-between gap-10  pt-[10vh] relative">
+    <div className="flex flex-col h-full w-full justify-between gap-10  pt-[20vh] relative">
       <Navbar />
       {modal.active ? modalImages() : null}
       {/* <div className=" h-20"></div> */}
@@ -198,7 +196,7 @@ const Meet = () => {
               alt="logo searching"
               src={require("../assets/amico.png")}
             />
-            <div className="flex flex-col max-w-[685px] gap-5 3xl:gap-1">
+            <div className="flex flex-col max-w-[685px] 2xl:max-w-[500px] gap-5 3xl:gap-1">
               <p className={tailWindStyle.p24wb}>
                 Un séminaire selon vos envies
               </p>

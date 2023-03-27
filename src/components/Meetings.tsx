@@ -569,7 +569,15 @@ const Meetings = () => {
                 >
                   VOIR PLUS
                 </button>
-              ) : null}
+              ) : (
+                <div>
+                  <img
+                    alt="scoop"
+                    className=" xl:pt-[15vh]"
+                    src={require("../assets/not_meet_found.png")}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
