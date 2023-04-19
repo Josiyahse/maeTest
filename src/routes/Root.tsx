@@ -3,6 +3,7 @@ import Meetings from "../components/Meetings";
 import Meet from "../components/Meet";
 import ErrorPage from "../error-page";
 import Home from "../components/Home";
+import Faq from "../components/Faq";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     path: "/meet",
     element: <Meet />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/faq",
+    element: <Faq />,
   },
 ]);
 
