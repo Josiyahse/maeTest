@@ -223,16 +223,16 @@ const Home = () => {
       return (
         <div
           key={`des${index}`}
-          className="flex flex-col h-full w-full gap-[3vh] justify-around"
+          className="flex flex-col w-full gap-[5vh] justify-around"
         >
           <div className="flex justify-center md:scale-125 xl:scale-100 md:pb-10 xl:pb-0 object-cover object-center ">
             <img className="" alt={des.title} src={des.logo} />
           </div>
-          <div className="flex flex-col ">
-            <p className=" flex items-start font-bold h-[16vh] text-[5vw] md:h-[20vh] xl:text-[1.5vw]">
+          <div className="flex flex-col justify-around items-center gap-5 ">
+            <p className=" flex items-start font-bold  text-[20px] md:text-[40px]  xl:text-[30px]">
               {des.bold.toUpperCase()}
             </p>
-            <p className="font-medium text-[5vw] text-[#757575] xl:text-[1.2vw]">
+            <p className="font-medium text-[#757575] text-[20px] md:text-[30px] ">
               {des.regular}
             </p>
           </div>
@@ -293,6 +293,7 @@ const Home = () => {
           className=" absolute w-[15vw] left-[15vw] top-[295vh] rotate-90"
           src={require("../assets/back4.png")}
         /> */}
+        {/* STOP */}
         <img
           alt="backFigL"
           className=" absolute w-[20vw] left-[0vw] top-[300vh] "
@@ -365,10 +366,10 @@ const Home = () => {
         }}
       >
         <div className="flex flex-col justify-center gap-3">
-          <p className="text-center text-[7vw] font-bold text-white xl:text-[5vw] ">
+          <p className="text-center font-bold text-white text-[40px]  md:text-[60px]  xl:text-[80px]  2xl:text-[100px]">
             {"votre séminaire sur mesure".toUpperCase()}
           </p>
-          <p className="text-center text-[4vw] font-semibold text-white xl:text-[2vw]">
+          <p className="text-center text-[20px] font-semibold text-white xl:text-[2vw]">
             Soyez vous, jusqu’au bout !
           </p>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useScreen from "./Screen";
 import { HiMenu } from "react-icons/hi";
@@ -8,14 +8,25 @@ const Navbar = () => {
   const location = useLocation();
   let screen: any = useScreen();
   const [active, setActive] = useState("ACCUEIL");
-  const [isload, setIsLoad] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [dropped, setDropped] = useState(false);
 
-  if (location.state !== null && !isload) {
-    setActive(location.state);
-    setIsLoad(!isload);
-  }
+  // if (location.state !== null && !isload) {
+  //   setActive(location.state);
+  //   setIsLoad(!isload);
+  // }
+
+  useEffect(() => {
+    let path = location.pathname;
+
+    if (path === "/") {
+      setActive("ACCUEIL");
+    } else {
+      setActive(path.toUpperCase());
+    }
+
+    return () => {};
+  }, [location]);
 
   const list = [
     { name: "notre agence" },
@@ -78,7 +89,6 @@ const Navbar = () => {
               : colorNotActive()
           }
           onClick={() => {
-            setActive(text.name.toUpperCase());
             navigate(text.link, { state: text.name.toUpperCase() });
           }}
         >
@@ -106,7 +116,6 @@ const Navbar = () => {
 
   const navigationFunction = (text: any) => {
     if (text.link !== undefined) {
-      setActive(text.name.toUpperCase());
       navigate(text.link, { state: text.name.toUpperCase() });
     }
   };
