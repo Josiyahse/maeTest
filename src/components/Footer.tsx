@@ -5,10 +5,20 @@ import { AiFillInstagram } from "react-icons/ai";
 const Footer = () => {
   const btStrokeColor = "text-[#CE5729] text-2xl 3xl:text-[50px]";
   let footerList = [
-    {
-      title: "Liens utiles",
-      list: ["Organiser mon séminaire", "Nous rejoindre", "CGV & CGU"],
+    
+      {
+        title: "Liens utiles",
+        list: [
+          "Organiser mon séminaire",
+          "Nous rejoindre",
+          <span className="flex">
+            <a href="/cgu" className="mr-1">CGU</a> &
+            <a href="/cgv" className="ml-1">CGV</a>
+          </span>
+        ],
+    
     },
+    
     {
       title: "Notre entreprise",
       list: ["Contact", "Newsletter", "Faq", "Partenaires GES"],
