@@ -4,8 +4,25 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AiOutlineRight } from "react-icons/ai";
 import { HiOutlineArrowCircleRight } from "react-icons/hi";
+import { Directus } from "@directus/sdk";
 
 const Home = () => {
+  const API = process.env.REACT_APP_DIRECTUS_URL as string;
+
+  const directus: any = new Directus(API);
+
+  async function publicData() {
+    // GET DATA
+    // We don't need to authenticate if the public role has access to some_public_collection.
+    const publicData = await directus
+      .items("test")
+      .readByQuery({ sort: ["id"] });
+
+    console.log("test", publicData.data);
+  }
+
+  publicData();
+
   const fadeRef = useRef<any>(null);
 
   const navigate = useNavigate();

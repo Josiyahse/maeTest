@@ -6,6 +6,7 @@ const CGU = () => {
   return (
     <div className="flex flex-col w-full justify-between gap-[30vh] pt-[80vh] static">
       <Navbar />
+
       <Footer />
     </div>
   );
