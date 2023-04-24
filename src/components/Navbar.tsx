@@ -31,7 +31,7 @@ const Navbar = () => {
   const list = [
     { name: "notre agence" },
     { name: "séminaire prêt a l'emploi", link: "/meetings" },
-    { name: "blog" },
+    { name: "blog", link: "/blog" },
     { name: "contact" },
   ];
 
@@ -62,7 +62,7 @@ const Navbar = () => {
     } else {
       return logList.map((entry: any) => {
         return (
-          <button className="flex justify-center px-5">
+          <button key={entry.name} className="flex justify-center px-5">
             <p
               className={
                 entry.name.toUpperCase() === active

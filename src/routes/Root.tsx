@@ -8,6 +8,8 @@ import CGU from "../components/cgu_cgv/CGU";
 import CGV from "../components/cgu_cgv/CGV";
 import OrganisationCarbon from "../components/carbon/OrganisationCarbon";
 import OrganisationCarbonDetails from "../components/carbon/OrganisationCarbonDetails";
+import BlogPage from "../components/blog/BlogPage";
+import ReadBlog from "../components/blog/ReadBlog";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
   {
     path: "/carbon_details",
     element: <OrganisationCarbonDetails />,
+  },
+  {
+    path: "/blog",
+    element: <BlogPage />,
+  },
+  {
+    path: "/read_blog",
+    element: <ReadBlog />,
   },
 ]);
 

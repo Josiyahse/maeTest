@@ -2015,4 +2015,66 @@ const meets = [
   },
 ];
 
-export { wideCardData, meets };
+const blog = [
+  {
+    title: "Consequat aliquip adipisicing pariatur voluptate id eu in.",
+    resume:
+      "Exercitation pariatur culpa incididunt quis. Reprehenderit reprehenderit sunt laboris laboris ipsum dolor non reprehenderit cupidatat laboris aliquip dolor reprehenderit proident. Labore incididunt nulla proident veniam est consectetur amet velit aute. Ex elit eiusmod sit proident.",
+    image:
+      "https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "ARTICLE",
+  },
+  {
+    title: "Consequat aliquip adipisicing pariatur voluptate id eu in.",
+    resume:
+      "Exercitation pariatur culpa incididunt quis. Reprehenderit reprehenderit sunt laboris laboris ipsum dolor non reprehenderit cupidatat laboris aliquip dolor reprehenderit proident. Labore incididunt nulla proident veniam est consectetur amet velit aute. Ex elit eiusmod sit proident.",
+    image:
+      "https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "ARTICLE",
+  },
+  {
+    title: "Consequat aliquip adipisicing pariatur voluptate id eu in.",
+    resume:
+      "Exercitation pariatur culpa incididunt quis. Reprehenderit reprehenderit sunt laboris laboris ipsum dolor non reprehenderit cupidatat laboris aliquip dolor reprehenderit proident. Labore incididunt nulla proident veniam est consectetur amet velit aute. Ex elit eiusmod sit proident.",
+    image:
+      "https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "ARTICLE",
+  },
+  {
+    title: "Consequat aliquip adipisicing pariatur voluptate id eu in.",
+    resume:
+      "Exercitation pariatur culpa incididunt quis. Reprehenderit reprehenderit sunt laboris laboris ipsum dolor non reprehenderit cupidatat laboris aliquip dolor reprehenderit proident. Labore incididunt nulla proident veniam est consectetur amet velit aute. Ex elit eiusmod sit proident.",
+    image:
+      "https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "ARTICLE",
+  },
+  {
+    title: "Consequat aliquip adipisicing pariatur voluptate id eu in.",
+    resume:
+      "Exercitation pariatur culpa incididunt quis. Reprehenderit reprehenderit sunt laboris laboris ipsum dolor non reprehenderit cupidatat laboris aliquip dolor reprehenderit proident. Labore incididunt nulla proident veniam est consectetur amet velit aute. Ex elit eiusmod sit proident.",
+    image:
+      "https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "ARTICLE",
+  },
+  {
+    title: "Consequat aliquip adipisicing pariatur voluptate id eu in.",
+    resume:
+      "Exercitation pariatur culpa incididunt quis. Reprehenderit reprehenderit sunt laboris laboris ipsum dolor non reprehenderit cupidatat laboris aliquip dolor reprehenderit proident. Labore incididunt nulla proident veniam est consectetur amet velit aute. Ex elit eiusmod sit proident.",
+    image:
+      "https://images.unsplash.com/photo-1682238112660-12139f61ccb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "ARTICLE",
+  },
+];
+const testimony = [
+  {
+    title:
+      "Veniam irure sint sunt excepteur velit do velit enim cupidatat sunt.",
+    resume:
+      "lorem Aute commodo qui nostrud Lorem amet id voluptate labore irure incididunt.Tempor ipsum aute duis ea velit magna consequat laboris. Irure duis consequat ea labore anim dolor incididunt in elit minim ullamco dolore. Esse ut dolore consequat nulla. Exercitation nisi deserunt do",
+    image:
+      "https://images.unsplash.com/photo-1674574124345-02c525664b65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    type: "TEMOIGNAGE",
+  },
+];
+
+export { wideCardData, meets, blog, testimony };
