@@ -3,7 +3,7 @@ import Meetings from "../components/Meetings";
 import Meet from "../components/Meet";
 import ErrorPage from "../error-page";
 import Home from "../components/Home";
-import Faq from "../components/Faq";
+import Faq from "../components/Faq/Faq";
 import CGU from "../components/cgu_cgv/CGU";
 import CGV from "../components/cgu_cgv/CGV";
 import OrganisationCarbon from "../components/carbon/OrganisationCarbon";
