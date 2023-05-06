@@ -63,18 +63,20 @@ export default function Faq() {
         trouvez pas de réponse à votre question ou si vous avez besoin de
         conseils, pour plus d’informations, n’hésitez pas à nous contacter.
       </p>
-      <div className="flex flex-wrap justify-center items-center mt-[100px] gap-5 ml-xl">
+      <div className="flex  justify-between mt-[100px] gap-5 ml-xl overflow-auto">
         {categories.map(({ title, label, active, inactive }) => (
           <div
             role="button"
             onClick={() => {
               setActiveFaq(title);
             }}
-            className={`flex flex-col justify-center items-center p-3 border-2 border-black w-[200px] h-[200px] mt-[20px] ${
-              activeFaq === title && "bg-black"
+            className={`flex flex-col justify-center items-center p-3 border-2 border-${
+              activeFaq === title ? "[#CE5729]" : "black"
+            } h-[200px] w-[200px] min-w-[150px] min-h-[50px] mt-[20px] ${
+              activeFaq === title && "bg-[#CE5729]"
             }`}
           >
-            <div className="w-[75px] h-[75px]">
+            <div className="">
               <img
                 className="w-full h-full"
                 src={activeFaq === title ? active : inactive}
