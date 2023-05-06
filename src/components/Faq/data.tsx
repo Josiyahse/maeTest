@@ -375,7 +375,7 @@ export const faqWording = [
     ),
   },
   {
-    title: "Que faire si j’ai un souci pendant mon séminaire ? ",
+    title: "Que faire si j’ai un souci pendant mon séminaire ?",
     category: "guarantee",
     content: (
       <div>
@@ -492,7 +492,7 @@ export const faqWording = [
     ),
   },
   {
-    title: "Qui peut participer au programme de parrainage ? ",
+    title: "Qui peut participer au programme de parrainage ?",
     category: "sponsorship",
     content: (
       <div>
@@ -680,6 +680,49 @@ export const faqWording = [
           protection des données. Vous pouvez donc être assuré que vos données
           seront traitées en toute sécurité et en toute confidentialité par nos
           collaborateurs.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Quelles sont les mesures sanitaires prises par Meltrip ?",
+    category: "sanitary",
+    content: (
+      <div>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden-Sydney College in Virginia, looked up one of the more obscure
+          Latin words, consectetur, from a Lorem Ipsum passage, and going
+          through the cites of the word in classical literature, discovered the
+          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+          Evil) by Cicero, written in 45 BC. This book is a treatise on the
+          theory of ethics, very popular during the Renaissance. The first line
+          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+          section 1.10.32.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Quelles sont les conditions d’annulation en période de Covid-19 ?",
+    category: "sanitary",
+    content: (
+      <div>
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected
+          humour, or randomised words which don't look even slightly believable.
+          If you are going to use a passage of Lorem Ipsum, you need to be sure
+          there isn't anything embarrassing hidden in the middle of text. All
+          the Lorem Ipsum generators on the Internet tend to repeat predefined
+          chunks as necessary, making this the first true generator on the
+          Internet. It uses a dictionary of over 200 Latin words, combined with
+          a handful of model sentence structures, to generate Lorem Ipsum which
+          looks reasonable. The generated Lorem Ipsum is therefore always free
+          from repetition, injected humour, or non-characteristic words etc.
         </p>
       </div>
     ),

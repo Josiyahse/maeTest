@@ -15,12 +15,12 @@ export function Accordions({ items }: any) {
   };
 
   return (
-    <div className="w-full  mx-auto">
+    <div className="w-full  mx-auto mt-[60px]">
       {items.map((item: any, index: number) => (
         <>
           <div key={index}>
             <div
-              className="flex justify-between items-center p-4 cursor-pointer"
+              className="flex justify-between items-center py-4 cursor-pointer"
               onClick={() => handleClick(index)}
             >
               <h2
@@ -52,7 +52,7 @@ export default function Faq() {
   const [activeFaq, setActiveFaq] = useState("services");
 
   return (
-    <div className="flex flex-col justify-center m-[72px]">
+    <div className="flex flex-col justify-center md:m-[72px] m-[20px]">
       <div className="justify-center hidden md:flex ">
         <img className="w-[750px] h-[470px]" src={faq} alt="faq" />
       </div>
@@ -63,7 +63,7 @@ export default function Faq() {
         trouvez pas de réponse à votre question ou si vous avez besoin de
         conseils, pour plus d’informations, n’hésitez pas à nous contacter.
       </p>
-      <div className="flex flex-wrap justify-between items-center mt-[100px]">
+      <div className="flex flex-wrap justify-center items-center mt-[100px] gap-5 ml-xl">
         {categories.map(({ title, label, active, inactive }) => (
           <div
             role="button"
@@ -92,7 +92,7 @@ export default function Faq() {
           </div>
         ))}
       </div>
-      <div className=" flex mt-[100px] px-20 flex-col">
+      <div className=" flex mt-[100px] md:px-20 flex-col">
         <h1 className="text-3xl font-bold">
           {categories.find((cat) => cat.title === activeFaq)?.label}
         </h1>
