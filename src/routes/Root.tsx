@@ -4,6 +4,10 @@ import Meet from "../components/Meet";
 import ErrorPage from "../error-page";
 import Home from "../components/Home";
 import Faq from "../components/Faq";
+import CGU from "../components/cgu_cgv/CGU";
+import CGV from "../components/cgu_cgv/CGV";
+import OrganisationCarbon from "../components/carbon/OrganisationCarbon";
+import OrganisationCarbonDetails from "../components/carbon/OrganisationCarbonDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +26,22 @@ const router = createBrowserRouter([
   {
     path: "/faq",
     element: <Faq />,
+  },
+  {
+    path: "/cgu",
+    element: <CGU />,
+  },
+  {
+    path: "/cgv",
+    element: <CGV />,
+  },
+  {
+    path: "/carbon",
+    element: <OrganisationCarbon />,
+  },
+  {
+    path: "/carbon_details",
+    element: <OrganisationCarbonDetails />,
   },
 ]);
 
